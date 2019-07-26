@@ -9,15 +9,28 @@
 import Foundation
 import RealmSwift
 
-/*
+
 struct UsuarioView {
     
-    var email = ""
+    var userName = ""
+    
 }
 
 
 class UsuarioViewModel {
     
-    static func save(object: User)
-}*/
-
+    static func save(object: User) {
+    
+        try? uiRealm.write {
+            
+            uiRealm.add(object, update: .all)
+        }
+    }
+    
+    static func delete() {
+        
+        try? uiRealm.write {
+            uiRealm.deleteAll()
+        }
+    }
+}

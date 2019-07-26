@@ -16,6 +16,11 @@
 		836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E2B5222E9E8C3002CC0B6 /* CadastroViewController.swift */; };
 		836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E2B5422E9F11D002CC0B6 /* ScreenManager.swift */; };
 		836E2B5822E9FA3C002CC0B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E2B5722E9FA3C002CC0B6 /* ViewController.swift */; };
+		837EF83722EB255500F62825 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83622EB255500F62825 /* Post.swift */; };
+		837EF83922EB2A9700F62825 /* PostStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837EF83822EB2A9700F62825 /* PostStoryboard.storyboard */; };
+		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
+		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
+		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
 		F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66C788822D8BC45001B5FDA /* AppDelegate.swift */; };
 		F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66C788C22D8BC45001B5FDA /* Main.storyboard */; };
 		F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66C788F22D8BC4D001B5FDA /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		836E2B5222E9E8C3002CC0B6 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		836E2B5422E9F11D002CC0B6 /* ScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenManager.swift; sourceTree = "<group>"; };
 		836E2B5722E9FA3C002CC0B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		837EF83622EB255500F62825 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		837EF83822EB2A9700F62825 /* PostStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostStoryboard.storyboard; sourceTree = "<group>"; };
+		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
+		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		F66C788522D8BC45001B5FDA /* Treinamento-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Treinamento-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66C788822D8BC45001B5FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66C788D22D8BC45001B5FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +138,42 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		837EF83422EB23C400F62825 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				837EF83D22EB3D4900F62825 /* Service */,
+				837EF83A22EB2AA400F62825 /* Controllers */,
+				837EF83522EB24DC00F62825 /* Model */,
+				837EF83822EB2A9700F62825 /* PostStoryboard.storyboard */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		837EF83522EB24DC00F62825 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				837EF83622EB255500F62825 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		837EF83A22EB2AA400F62825 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				837EF83B22EB2B1500F62825 /* PostViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		837EF83D22EB3D4900F62825 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */,
+				837EF84022EB4A1500F62825 /* PostService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F66C787C22D8BC45001B5FDA = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +195,7 @@
 		F66C788722D8BC45001B5FDA /* Treinamento-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				837EF83422EB23C400F62825 /* Post */,
 				836557C622E899B100EFE306 /* Login */,
 				F66C789A22D8BC87001B5FDA /* Application */,
 				F66C788C22D8BC45001B5FDA /* Main.storyboard */,
@@ -263,6 +310,7 @@
 				F66C789322D8BC4D001B5FDA /* LaunchScreen.storyboard in Resources */,
 				F66C78A122D8BE32001B5FDA /* Colors.json in Resources */,
 				F66C789F22D8BE16001B5FDA /* Localizable.strings in Resources */,
+				837EF83922EB2A9700F62825 /* PostStoryboard.storyboard in Resources */,
 				F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */,
 				F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */,
 			);
@@ -339,9 +387,13 @@
 				F66C78A822D8CF65001B5FDA /* Colors.swift in Sources */,
 				F66C78AA22D8D453001B5FDA /* Assets.swift in Sources */,
 				F66C78A722D8CF65001B5FDA /* Localizable.swift in Sources */,
+				837EF83722EB255500F62825 /* Post.swift in Sources */,
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
 				836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */,
+				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
+				837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */,
+				837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */,
 				836E2B5822E9FA3C002CC0B6 /* ViewController.swift in Sources */,
 				836E2B4F22E9E017002CC0B6 /* UsuarioViewModel.swift in Sources */,
 				836E2B4922E9D1E0002CC0B6 /* AutenticacaoService.swift in Sources */,

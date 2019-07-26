@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var emailTextField: UIView!
-    @IBOutlet var passwordTextField: UIView!
-    
+
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     
     var service: AutenticacaoService!
     
@@ -27,8 +27,11 @@ class ViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         
         
-        
-        service.loginUser(email: "fransilva@gmail.com", password: "12345678")
+        if let email = emailText.text,
+           let password = passwordText.text,
+            !email.isEmpty && !password.isEmpty {
+            self.service.loginUser(email: email, password: password)
+        }
     }
  
     @IBAction func cadastrar(_ sender: Any) {
@@ -46,7 +49,8 @@ class ViewController: UIViewController {
 
 extension ViewController: AutenticacaoServiceDelegate{
     func success() {
-        print("Success")
+
+        ScreenManager.setupInitialViewController()
     }
     
     func failure(error: String) {

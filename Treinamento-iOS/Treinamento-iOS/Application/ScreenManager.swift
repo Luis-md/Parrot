@@ -7,17 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
-/*
 class ScreenManager {
     
-    func setupInitialViewController() {
+    static func setupInitialViewController() {
         if SessionControl.isSessionActive {
             
-            UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: StoryboardScene.Contatos.contatosViewController.instantiate())
+            UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: StoryboardScene.PostStoryboard.postViewController.instantiate())
         } else {
-            UIApplication.shared.keyWindow?.rootViewController = StoryboardScene.Main.viewController.instantiate()
+            UIApplication.shared.keyWindow?.rootViewController = StoryboardScene.Main.initialScene.instantiate()
         }
     }
 }
-*/
+

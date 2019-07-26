@@ -102,8 +102,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="xIx-YC-xdG"/>
                     <connections>
-                        <outlet property="emailTextField" destination="8bC-Xf-vdC" id="9b5-JG-A5M"/>
-                        <outlet property="passwordTextField" destination="8bC-Xf-vdC" id="wn2-ya-R43"/>
+                        <outlet property="emailText" destination="2MD-Uv-LCP" id="A1P-et-bQd"/>
+                        <outlet property="passwordText" destination="AOx-c7-nB6" id="inC-im-hUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

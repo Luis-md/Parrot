@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 let baseUrl = "http://200.19.188.7:3010"
-
+var uiRealm: Realm!
 
 
 @UIApplicationMain
@@ -20,7 +20,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        do {
+            
+            try uiRealm = Realm()
+            
+        } catch  {
+            
+            print("Erro no Realm")
+        }
+        
+        print("DOCUMENTS: ", Realm.Configuration.defaultConfiguration.fileURL ?? "")
+        
+        SessionControl.setHeaders()
+        
+        if SessionControl.isSessionActive {
+            
+            self.window?.rootViewController = UINavigationController(rootViewController: StoryboardScene.PostStoryboard.postViewController.instantiate())
+        } else {
+            
+            self.window?.rootViewController = StoryboardScene.Main.viewController.instantiate()
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -8,10 +8,9 @@
 
 import Foundation
 
-/*
 class SessionControl {
     
-    static var headers: [String:String] = [:]
+    static var headers: [String : String] = [:]
     
     static var user: User? {
         return uiRealm.objects(User.self).first
@@ -19,9 +18,11 @@ class SessionControl {
     
     static var isSessionActive: Bool {
         
-        if let user = self.user {
+        if let _ = self.user {
+           
             return true
         }
+        
         return false
     }
     
@@ -32,8 +33,7 @@ class SessionControl {
             if let token = user.token {
                 self.headers["token"] = token
             }
-            
             print(self.headers["token"] ?? "-")
         }
     }
-}*/
+}

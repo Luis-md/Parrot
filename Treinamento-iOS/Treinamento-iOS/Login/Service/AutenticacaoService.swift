@@ -74,6 +74,8 @@ class AutenticacaoService {
                     if let token = response.response?.allHeaderFields["token"] as? String {
                         user.token = token
                         print("Login ok!")
+                        UsuarioViewModel.save(object: user)
+                        SessionControl.setHeaders()
                     }
                     
                     
