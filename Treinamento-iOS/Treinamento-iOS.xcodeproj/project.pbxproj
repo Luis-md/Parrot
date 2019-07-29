@@ -21,6 +21,9 @@
 		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
 		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
+		F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199B9E22EF625100B2670F /* PostViewModel.swift */; };
+		F6199BA322EF6C0100B2670F /* Autor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA222EF6C0100B2670F /* Autor.swift */; };
+		F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */; };
 		F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66C788822D8BC45001B5FDA /* AppDelegate.swift */; };
 		F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66C788C22D8BC45001B5FDA /* Main.storyboard */; };
 		F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66C788F22D8BC4D001B5FDA /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		F6199B9E22EF625100B2670F /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		F6199BA222EF6C0100B2670F /* Autor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autor.swift; sourceTree = "<group>"; };
+		F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorViewModel.swift; sourceTree = "<group>"; };
 		F66C788522D8BC45001B5FDA /* Treinamento-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Treinamento-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66C788822D8BC45001B5FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66C788D22D8BC45001B5FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		837EF83422EB23C400F62825 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				F6199B9D22EF622300B2670F /* ViewModel */,
 				837EF83D22EB3D4900F62825 /* Service */,
 				837EF83A22EB2AA400F62825 /* Controllers */,
 				837EF83522EB24DC00F62825 /* Model */,
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				837EF83622EB255500F62825 /* Post.swift */,
+				F6199BA222EF6C0100B2670F /* Autor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +180,15 @@
 				837EF84022EB4A1500F62825 /* PostService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F6199B9D22EF622300B2670F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6199B9E22EF625100B2670F /* PostViewModel.swift */,
+				F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F66C787C22D8BC45001B5FDA = {
@@ -195,9 +212,9 @@
 		F66C788722D8BC45001B5FDA /* Treinamento-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F66C789A22D8BC87001B5FDA /* Application */,
 				837EF83422EB23C400F62825 /* Post */,
 				836557C622E899B100EFE306 /* Login */,
-				F66C789A22D8BC87001B5FDA /* Application */,
 				F66C788C22D8BC45001B5FDA /* Main.storyboard */,
 				F66C789422D8BC4D001B5FDA /* Info.plist */,
 				F66C789122D8BC4D001B5FDA /* LaunchScreen.storyboard */,
@@ -388,14 +405,17 @@
 				F66C78AA22D8D453001B5FDA /* Assets.swift in Sources */,
 				F66C78A722D8CF65001B5FDA /* Localizable.swift in Sources */,
 				837EF83722EB255500F62825 /* Post.swift in Sources */,
+				F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */,
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
 				836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */,
 				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
+				F6199BA322EF6C0100B2670F /* Autor.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */,
 				837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */,
 				836E2B5822E9FA3C002CC0B6 /* ViewController.swift in Sources */,
 				836E2B4F22E9E017002CC0B6 /* UsuarioViewModel.swift in Sources */,
+				F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */,
 				836E2B4922E9D1E0002CC0B6 /* AutenticacaoService.swift in Sources */,
 				836557C922E89A1600EFE306 /* User.swift in Sources */,
 				836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */,

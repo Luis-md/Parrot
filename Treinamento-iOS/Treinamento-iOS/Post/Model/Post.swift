@@ -19,7 +19,7 @@ class Post: Object, Mappable{
     @objc dynamic var postMessage: String?
     var curtidas = RealmOptional<Int>()
     var criado_em = RealmOptional<Int>()
-    @objc dynamic var autor: User?
+    @objc dynamic var autor: Autor?
     
     required convenience init?(map: Map) {
         

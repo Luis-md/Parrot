@@ -38,8 +38,8 @@ class ViewController: UIViewController {
        
         let controller = StoryboardScene.Main.cadastroViewController.instantiate()
         
-        self.navigationController?.pushViewController(controller, animated: true)
         
+        self.navigationController?.pushViewController(controller, animated: true)
         
         /*service.cadastroUser(nome: "Francisco", username: "Da Silva", email: "fransilva@gmail.com", password: "12345678")*/
     }

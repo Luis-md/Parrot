@@ -38,7 +38,7 @@ class AutorViewModel{
 
     static func getAsModel(autorView: AutorView) -> Autor {
         
-        var autor = Autor()
+        let autor = Autor()
         
         autor.nome = autorView.nome
         autor.email = autorView.email

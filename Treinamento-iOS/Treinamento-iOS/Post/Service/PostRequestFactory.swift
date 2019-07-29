@@ -13,9 +13,9 @@ import Alamofire
 class PostRequestFactory {
     
     
-    static func postPost(postmsg: String) -> DataRequest {
+    static func sendPost(postMsg: String) -> DataRequest {
         
-        let postMessage: [String : String] = ["mensagem":postmsg]
+        let postMessage: [String : String] = ["mensagem":postMsg]
         
         return Alamofire.request(baseUrl+"/postagem", method: .post, parameters: postMessage, encoding: JSONEncoding.default, headers: SessionControl.headers)
     }

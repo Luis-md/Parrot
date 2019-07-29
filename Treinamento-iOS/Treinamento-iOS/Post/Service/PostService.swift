@@ -11,14 +11,37 @@ import Alamofire
 import AlamofireObjectMapper
 
 protocol PostServiceDelegate {
-    func save()
+    func success()
     
     func failure(error: String)
 }
 
 class PostService {
     
+    var delegate: PostServiceDelegate!
     
-  
+    init(delegate: PostServiceDelegate) {
+        self.delegate = delegate
+    }
+    
+
+    func post(postMsg: String) {
+        
+        PostRequestFactory.sendPost(postMsg: postMsg).validate().responseObject { (response: DataResponse<Post>) in
+            
+            switch response.result {
+            case .success:
+                
+                if let postMsg = response.result.value {
+                    PostViewModel.saveAll(objects: [postMsg])
+                }
+                self.delegate.success()
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
+    }
 }
 
