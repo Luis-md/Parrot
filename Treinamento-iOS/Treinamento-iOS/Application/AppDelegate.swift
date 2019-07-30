@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if SessionControl.isSessionActive {
             
-            self.window?.rootViewController = UINavigationController(rootViewController: StoryboardScene.PostStoryboard.postViewController.instantiate())
+            self.window?.rootViewController = UINavigationController(rootViewController: StoryboardScene.PostStoryboard.postTabBarViewController.instantiate())
         } else {
             
             self.window?.rootViewController = StoryboardScene.Main.initialScene.instantiate()

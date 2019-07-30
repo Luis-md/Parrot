@@ -43,18 +43,17 @@ class AutenticacaoService {
                         if let token = response.response?.allHeaderFields["token"] as? String {
                             user.token = token
                             print("Register ok!")
+                            
+                            //salvando o usuario e setando os headers
+                            UsuarioViewModel.save(object: user)
+                            SessionControl.setHeaders()
                         }
-                        
-                        
                     }
+                
                 self.delegate.success()
-                
                 case .failure(let error):
-                
-                    self.delegate.failure(error: error.localizedDescription)
+                self.delegate.failure(error: error.localizedDescription)
             }
-            
-            
         }
     }
     
@@ -77,12 +76,11 @@ class AutenticacaoService {
                         UsuarioViewModel.save(object: user)
                         SessionControl.setHeaders()
                     }
-                    
-                    
                 }
+                
                 self.delegate.success()
                 
-            case .failure(let error):
+                case .failure(let error):
                 
                 self.delegate.failure(error: error.localizedDescription)
             }

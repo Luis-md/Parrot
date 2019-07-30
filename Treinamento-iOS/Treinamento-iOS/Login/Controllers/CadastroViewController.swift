@@ -40,7 +40,9 @@ class CadastroViewController: UIViewController {
 extension CadastroViewController: AutenticacaoServiceDelegate {
     func success() {
         
+        self.navigationController?.popViewController(animated: true)
         
+        ScreenManager.setupInitialViewController()
     }
     
     func failure(error: String) {

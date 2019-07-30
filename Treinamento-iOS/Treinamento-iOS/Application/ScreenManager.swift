@@ -14,7 +14,8 @@ class ScreenManager {
     static func setupInitialViewController() {
         if SessionControl.isSessionActive {
             
-            UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: StoryboardScene.PostStoryboard.postViewController.instantiate())
+            UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController:
+                StoryboardScene.PostStoryboard.postTabBarViewController.instantiate())
         } else {
             UIApplication.shared.keyWindow?.rootViewController = StoryboardScene.Main.initialScene.instantiate()
         }

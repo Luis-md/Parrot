@@ -21,6 +21,10 @@
 		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
 		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
+		898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F514A22F0C53C0099674B /* PostTabBarViewController.swift */; };
+		898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515022F0CA7D0099674B /* SearchViewController.swift */; };
+		898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515322F0E2B70099674B /* PostTableViewCell.swift */; };
+		898F515622F0E2B70099674B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 898F515422F0E2B70099674B /* PostTableViewCell.xib */; };
 		F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199B9E22EF625100B2670F /* PostViewModel.swift */; };
 		F6199BA322EF6C0100B2670F /* Autor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA222EF6C0100B2670F /* Autor.swift */; };
 		F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */; };
@@ -52,6 +56,10 @@
 		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		898F514A22F0C53C0099674B /* PostTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTabBarViewController.swift; sourceTree = "<group>"; };
+		898F515022F0CA7D0099674B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		898F515322F0E2B70099674B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		898F515422F0E2B70099674B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		F6199B9E22EF625100B2670F /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F6199BA222EF6C0100B2670F /* Autor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autor.swift; sourceTree = "<group>"; };
 		F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorViewModel.swift; sourceTree = "<group>"; };
@@ -147,11 +155,11 @@
 		837EF83422EB23C400F62825 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				837EF83822EB2A9700F62825 /* PostStoryboard.storyboard */,
 				F6199B9D22EF622300B2670F /* ViewModel */,
 				837EF83D22EB3D4900F62825 /* Service */,
 				837EF83A22EB2AA400F62825 /* Controllers */,
 				837EF83522EB24DC00F62825 /* Model */,
-				837EF83822EB2A9700F62825 /* PostStoryboard.storyboard */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -168,7 +176,10 @@
 		837EF83A22EB2AA400F62825 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				898F515222F0E28E0099674B /* cells */,
 				837EF83B22EB2B1500F62825 /* PostViewController.swift */,
+				898F515022F0CA7D0099674B /* SearchViewController.swift */,
+				898F514A22F0C53C0099674B /* PostTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +191,15 @@
 				837EF84022EB4A1500F62825 /* PostService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		898F515222F0E28E0099674B /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				898F515322F0E2B70099674B /* PostTableViewCell.swift */,
+				898F515422F0E2B70099674B /* PostTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		F6199B9D22EF622300B2670F /* ViewModel */ = {
@@ -328,6 +348,7 @@
 				F66C78A122D8BE32001B5FDA /* Colors.json in Resources */,
 				F66C789F22D8BE16001B5FDA /* Localizable.strings in Resources */,
 				837EF83922EB2A9700F62825 /* PostStoryboard.storyboard in Resources */,
+				898F515622F0E2B70099674B /* PostTableViewCell.xib in Resources */,
 				F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */,
 				F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */,
 			);
@@ -409,8 +430,11 @@
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
 				836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */,
 				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
+				898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */,
 				F6199BA322EF6C0100B2670F /* Autor.swift in Sources */,
+				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
+				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,
 				837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */,
 				837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */,
 				836E2B5822E9FA3C002CC0B6 /* ViewController.swift in Sources */,

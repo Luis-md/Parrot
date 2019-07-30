@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Post Tab Bar View Controller-->
+        <scene sceneID="8Bd-hz-GKH">
+            <objects>
+                <tabBarController storyboardIdentifier="PostTabBarViewController" id="3hb-ag-Vhu" customClass="PostTabBarViewController" customModule="Treinamento_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JpF-jT-ong">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzM-oH-39X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1309" y="-331"/>
+        </scene>
         <!--Post View Controller-->
         <scene sceneID="OrP-k9-rzm">
             <objects>
@@ -17,13 +31,75 @@
                     <view key="view" contentMode="scaleToFill" id="8zx-Lj-Tzm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-DQ-gzV">
+                                <rect key="frame" x="16" y="36" width="343" height="88"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="O que você está sentido?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CFy-8T-FJc">
+                                        <rect key="frame" x="64" y="0.0" width="223" height="88"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-U7-K5U">
+                                        <rect key="frame" x="307" y="54" width="23" height="22"/>
+                                        <state key="normal" image="edit"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-ld-WGg">
+                                        <rect key="frame" x="12" y="12" width="39" height="40"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wGA-U7-K5U" firstAttribute="leading" secondItem="d0n-DQ-gzV" secondAttribute="leading" constant="307" id="0al-T0-D9u"/>
+                                    <constraint firstItem="CFy-8T-FJc" firstAttribute="leading" secondItem="d0n-DQ-gzV" secondAttribute="leading" constant="64" id="Dqq-Yx-QO0"/>
+                                    <constraint firstItem="Lie-ld-WGg" firstAttribute="leading" secondItem="d0n-DQ-gzV" secondAttribute="leading" constant="12" id="JCw-Nq-Oey"/>
+                                    <constraint firstAttribute="bottom" secondItem="wGA-U7-K5U" secondAttribute="bottom" constant="12" id="MaP-17-2dE"/>
+                                    <constraint firstAttribute="trailing" secondItem="CFy-8T-FJc" secondAttribute="trailing" constant="56" id="Q38-Oh-rIX"/>
+                                    <constraint firstItem="wGA-U7-K5U" firstAttribute="top" secondItem="d0n-DQ-gzV" secondAttribute="top" constant="54" id="RQA-oY-i7n"/>
+                                    <constraint firstItem="Lie-ld-WGg" firstAttribute="top" secondItem="d0n-DQ-gzV" secondAttribute="top" constant="12" id="RYZ-HP-Pp4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lie-ld-WGg" secondAttribute="trailing" constant="292" id="SE9-iN-xCs"/>
+                                    <constraint firstAttribute="trailing" secondItem="wGA-U7-K5U" secondAttribute="trailing" constant="13" id="TCt-3B-iIy"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lie-ld-WGg" secondAttribute="bottom" constant="36" id="Xti-ZA-6jI"/>
+                                    <constraint firstAttribute="bottom" secondItem="CFy-8T-FJc" secondAttribute="bottom" id="gzi-YK-Xhl"/>
+                                    <constraint firstAttribute="height" constant="88" id="hvs-QR-0og"/>
+                                    <constraint firstItem="CFy-8T-FJc" firstAttribute="top" secondItem="d0n-DQ-gzV" secondAttribute="top" id="lSm-DF-Zed"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0fj-dN-JTS">
+                                <rect key="frame" x="0.0" y="156" width="375" height="511"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zx9-Kl-aCm" firstAttribute="bottom" secondItem="0fj-dN-JTS" secondAttribute="bottom" id="0o0-zC-USV"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="leading" secondItem="Zx9-Kl-aCm" secondAttribute="leading" id="MzY-go-OeO"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="leading" secondItem="Zx9-Kl-aCm" secondAttribute="leading" id="NpC-Sb-X1T"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="bottom" secondItem="Zx9-Kl-aCm" secondAttribute="bottom" id="UOs-Km-e8l"/>
+                            <constraint firstItem="d0n-DQ-gzV" firstAttribute="leading" secondItem="Zx9-Kl-aCm" secondAttribute="leading" constant="16" id="V1g-uu-FdH"/>
+                            <constraint firstItem="d0n-DQ-gzV" firstAttribute="top" secondItem="Zx9-Kl-aCm" secondAttribute="top" constant="16" id="ZgW-4t-0ki"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="top" secondItem="d0n-DQ-gzV" secondAttribute="bottom" constant="32" id="h3O-NI-aXc"/>
+                            <constraint firstItem="Zx9-Kl-aCm" firstAttribute="trailing" secondItem="d0n-DQ-gzV" secondAttribute="trailing" constant="16" id="jvN-H7-Soy"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="trailing" secondItem="Zx9-Kl-aCm" secondAttribute="trailing" id="qCV-Pb-xIT"/>
+                            <constraint firstItem="0fj-dN-JTS" firstAttribute="trailing" secondItem="Zx9-Kl-aCm" secondAttribute="trailing" id="vDw-wJ-kzb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zx9-Kl-aCm"/>
                     </view>
+                    <connections>
+                        <outlet property="groupView" destination="d0n-DQ-gzV" id="M0d-48-W7x"/>
+                        <outlet property="perfilImage" destination="Lie-ld-WGg" id="2va-be-VyF"/>
+                        <outlet property="postTextView" destination="CFy-8T-FJc" id="BxZ-Jb-WKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOV-KA-ezN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="-45"/>
+            <point key="canvasLocation" x="-458.39999999999998" y="-331.48425787106447"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit" width="22.5" height="21"/>
+        <image name="perfil" width="72.5" height="77"/>
+    </resources>
 </document>

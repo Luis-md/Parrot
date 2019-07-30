@@ -10,10 +10,16 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var groupView: UIView!
+    @IBOutlet weak var perfilImage: UIImageView!
+    @IBOutlet weak var postTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.groupView.layer.cornerRadius = 10
+        
+        self.perfilImage.layer.cornerRadius = self.perfilImage.frame.height / 2
     }
     
 

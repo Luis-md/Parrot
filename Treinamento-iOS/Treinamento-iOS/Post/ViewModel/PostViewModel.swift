@@ -29,11 +29,9 @@ class PostViewModel {
         }
         
         try? uiRealm.write{
-            
             uiRealm.add(objects, update: .all)
         }
     }
-    
     
     static func getAsView(post: Post?) -> PostView {
         guard let post = post else {
@@ -56,7 +54,6 @@ class PostViewModel {
     static func getAsView(posts: [Post]) -> [PostView] {
         
         var postsView: [PostView] = []
-        
         posts.forEach { (post) in
             
             postsView.append(self.getAsView(post: post))
@@ -82,7 +79,6 @@ class PostViewModel {
     static func get(by id: Int) -> PostView {
         
         let result = uiRealm.object(ofType: Post.self, forPrimaryKey: id)
-        
         return self.getAsView(post: result)
     }
     
@@ -100,6 +96,7 @@ class PostViewModel {
     }
     
     static func deletePosts(){
+        
         let results = uiRealm.objects(Post.self)
         
         try? uiRealm.write {

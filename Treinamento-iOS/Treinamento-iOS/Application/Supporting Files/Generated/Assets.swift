@@ -46,6 +46,9 @@ internal struct ColorAsset {
 internal enum Asset {
   internal static let parrotLogin = ImageAsset(name: "ParrotLogin")
   internal static let parrotLogotipo = ImageAsset(name: "ParrotLogotipo")
+  internal static let edit = ImageAsset(name: "edit")
+  internal static let houseOutline = ImageAsset(name: "house-outline")
+  internal static let perfil = ImageAsset(name: "perfil")
 
   // swiftlint:disable trailing_comma
   internal static let allColors: [ColorAsset] = [
@@ -53,6 +56,9 @@ internal enum Asset {
   internal static let allImages: [ImageAsset] = [
     parrotLogin,
     parrotLogotipo,
+    edit,
+    houseOutline,
+    perfil,
   ]
   // swiftlint:enable trailing_comma
   @available(*, deprecated, renamed: "allImages")
