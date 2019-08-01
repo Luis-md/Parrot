@@ -27,9 +27,13 @@ class PostRequestFactory {
         return Alamofire.request(baseUrl+"/postagem", method: .get, parameters: param, headers: SessionControl.headers)
     }
     
-    static func curtir(id: Int) -> DataRequest{
-        let param = ["id":id]
+    static func curtir(id: Int, curtido: Bool) -> DataRequest {
         
-        return Alamofire.request(baseUrl+"/curtir", method: .post, parameters: param, encoding: JSONEncoding.default, headers: SessionControl.headers)
+        return Alamofire.request(baseUrl+"/curtir/\(id)", method: curtido ? .delete : .post, headers: SessionControl.headers)
+    }
+    
+    static func delPost(id: Int) -> DataRequest {
+        
+        return Alamofire.request(baseUrl+"/postagem/\(id)", method: .delete, headers: SessionControl.headers)
     }
 }

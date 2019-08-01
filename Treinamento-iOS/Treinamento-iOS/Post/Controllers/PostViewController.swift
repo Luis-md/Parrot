@@ -24,6 +24,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         
         self.postagemService = PostService(delegate: self)
+        
         self.groupView.layer.cornerRadius = 10
         self.perfilImage.layer.cornerRadius = self.perfilImage.frame.height / 2
         
@@ -41,7 +42,7 @@ class PostViewController: UIViewController {
 }
 
 
-extension PostViewController : PostServiceDelegate{
+extension PostViewController: PostServiceDelegate {
     func success() {
         
         self.posts = PostViewModel.getPosts()
@@ -76,8 +77,23 @@ extension PostViewController : UITableViewDataSource, UITableViewDelegate{
 }
 
 extension PostViewController : PostTableViewCellDelegate {
-    func curtido(id: Int) {
-        self.postagemService.sendLike(id: id)
+    func curtido(id: Int, curtido: Bool) {
+        self.postagemService.sendLike(id: id, curtido: curtido)
     }
     
+    func optionPost(id: Int) {
+        
+        let optionMenu = UIAlertController(title: nil, message: "Escolha uma opção", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { (UIAlertAction) in
+            self.postagemService.delPost(id: id)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
 }

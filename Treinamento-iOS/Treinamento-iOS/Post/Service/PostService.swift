@@ -12,7 +12,6 @@ import AlamofireObjectMapper
 
 protocol PostServiceDelegate {
     func success()
-    
     func failure(error: String)
 }
 
@@ -63,15 +62,34 @@ class PostService {
         }
     }
     
-    func sendLike(id: Int) {
+    func sendLike(id: Int, curtido: Bool) {
         
-        PostRequestFactory.curtir(id: id).validate().responseObject { (response: DataResponse<Post>) in
+        PostRequestFactory.curtir(id: id, curtido: curtido).validate().responseObject { (response: DataResponse<Post>) in
             
             switch response.result {
             case .success:
                 
-                if let id = response.result.value {
-                    PostViewModel.saveAll(objects: [id])
+                if let post = response.result.value {
+                    PostViewModel.saveAll(objects: [post])
+                }
+                self.delegate.success()
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
+    }
+    
+    func delPost(id: Int) {
+        
+        PostRequestFactory.delPost(id: id).validate().responseObject { (response: DataResponse<Post>) in
+            
+            switch response.result {
+            case .success:
+                
+                if let post = response.result.value {
+                    PostViewModel.saveAll(objects: [post])
                 }
                 self.delegate.success()
                 

@@ -36,7 +36,7 @@ class Post: Object, Mappable{
         self.autor                  <- map["autor"]
         self.curtidas.value         <- map["curtidas"]
         self.criado_em.value        <- map["criado_em"]
-        self.curtido                <- map["curtido"]
+        self.curtido.value          <- map["curtido"]
     }
 }
 

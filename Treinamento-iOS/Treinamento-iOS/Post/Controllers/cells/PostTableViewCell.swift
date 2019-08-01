@@ -12,7 +12,9 @@ import Reusable //facilita para a gente poder colocar a celula na Table View
 
 protocol PostTableViewCellDelegate {
     
-    func curtido(id: Int)
+    func curtido(id: Int, curtido: Bool)
+    
+    func optionPost(id: Int)
 }
 
 class PostTableViewCell: UITableViewCell, NibReusable {
@@ -20,7 +22,7 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var imagePost: UIImageView!
-    
+    @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var like: UIButton!
     
     var delegate: PostTableViewCellDelegate!
@@ -44,7 +46,7 @@ class PostTableViewCell: UITableViewCell, NibReusable {
         self.post = post
         self.userName.text = "@\(post.autor.username)"
         self.postText.text = post.postMessage
-        
+        self.likeCount.text = "\(post.curtidas)"
         if post.curtido == false{
             self.like.tintColor = .gray
         } else {
@@ -54,15 +56,13 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     
     @IBAction func likeButton(_ sender: Any) {
         
-        self.delegate.curtido(post.id)
+        self.delegate.curtido(id: post.id, curtido: post.curtido)
     }
-    
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
     
+    
+    @IBAction func optionPost(_ sender: Any) {
+        
+        self.delegate.optionPost(id: post.id)
+    }
 }
