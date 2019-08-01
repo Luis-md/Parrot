@@ -16,10 +16,10 @@ struct PostView {
     var curtidas = 0
     var criado_em = 0
     var autor = AutorView()
+    var curtido = false
 }
 
 class PostViewModel {
-    
     
     //offline first
     static func saveAll(objects: [Post], clear: Bool = false){
@@ -46,7 +46,7 @@ class PostViewModel {
         postView.curtidas = post.curtidas.value ?? 0
         postView.criado_em = post.criado_em.value ?? 0
         postView.autor = AutorViewModel.getAsView(autor: post.autor)
-        
+        postView.curtido = post.curtido.value ?? false
         
         return postView
     }
@@ -91,6 +91,7 @@ class PostViewModel {
         post.curtidas.value = postView.curtidas
         post.criado_em.value = postView.criado_em
         post.autor = AutorViewModel.getAsModel(autorView: postView.autor)
+        post.curtido.value = postView.curtido
         
         return post
     }

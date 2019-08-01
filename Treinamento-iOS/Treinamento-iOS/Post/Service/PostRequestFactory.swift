@@ -19,4 +19,17 @@ class PostRequestFactory {
         
         return Alamofire.request(baseUrl+"/postagem", method: .post, parameters: postMessage, encoding: JSONEncoding.default, headers: SessionControl.headers)
     }
+    
+    static func getPosts(pagina: Int) -> DataRequest {
+        
+        let param = ["pagina":pagina]
+        
+        return Alamofire.request(baseUrl+"/postagem", method: .get, parameters: param, headers: SessionControl.headers)
+    }
+    
+    static func curtir(id: Int) -> DataRequest{
+        let param = ["id":id]
+        
+        return Alamofire.request(baseUrl+"/curtir", method: .post, parameters: param, encoding: JSONEncoding.default, headers: SessionControl.headers)
+    }
 }

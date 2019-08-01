@@ -13,13 +13,12 @@ import ObjectMapper
 
 class Post: Object, Mappable{
   
-    
-    
     var id = RealmOptional<Int>()
     @objc dynamic var postMessage: String?
     var curtidas = RealmOptional<Int>()
     var criado_em = RealmOptional<Int>()
     @objc dynamic var autor: Autor?
+    var curtido = RealmOptional<Bool>()
     
     required convenience init?(map: Map) {
         
@@ -37,6 +36,7 @@ class Post: Object, Mappable{
         self.autor                  <- map["autor"]
         self.curtidas.value         <- map["curtidas"]
         self.criado_em.value        <- map["criado_em"]
+        self.curtido                <- map["curtido"]
     }
 }
 
