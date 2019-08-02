@@ -14,9 +14,18 @@ struct PostView {
     var id = 0
     var postMessage = ""
     var curtidas = 0
-    var criado_em = 0
+    var criado_em = Date(timeIntervalSince1970: 0)
     var autor = AutorView()
     var curtido = false
+    
+    var dateString: String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        return dateFormatter.string(from: self.criado_em)
+    }
 }
 
 class PostViewModel {
@@ -44,7 +53,7 @@ class PostViewModel {
         postView.id = post.id.value ?? 0
         postView.postMessage = post.postMessage ?? ""
         postView.curtidas = post.curtidas.value ?? 0
-        postView.criado_em = post.criado_em.value ?? 0
+        postView.criado_em = Date(timeIntervalSince1970: TimeInterval(post.criado_em.value ?? 0)) 
         postView.autor = AutorViewModel.getAsView(autor: post.autor)
         postView.curtido = post.curtido.value ?? false
         
@@ -73,7 +82,7 @@ class PostViewModel {
     
     static func getPosts() -> [PostView] {
         
-        return self.getAsView(posts: self.get())
+        return self.getAsView(posts: self.get()).sorted(by: {$0.criado_em > $1.criado_em})
     }
     
     static func get(by id: Int) -> PostView {
@@ -89,7 +98,7 @@ class PostViewModel {
         post.id.value = postView.id
         post.postMessage = postView.postMessage
         post.curtidas.value = postView.curtidas
-        post.criado_em.value = postView.criado_em
+//        post.criado_em.value = postView.criado_em
         post.autor = AutorViewModel.getAsModel(autorView: postView.autor)
         post.curtido.value = postView.curtido
         
@@ -103,6 +112,15 @@ class PostViewModel {
         try? uiRealm.write {
             
             uiRealm.delete(results)
+        }
+    }
+    
+    static func delPost(id: Int) {
+        let result = uiRealm.object(ofType: Post.self, forPrimaryKey: id)!
+        
+        try? uiRealm.write {
+            
+            uiRealm.delete(result)
         }
     }
     

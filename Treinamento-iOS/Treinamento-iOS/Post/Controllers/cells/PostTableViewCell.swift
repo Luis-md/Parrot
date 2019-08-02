@@ -24,6 +24,7 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var imagePost: UIImageView!
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var like: UIButton!
+    @IBOutlet weak var timeText: UILabel!
     
     var delegate: PostTableViewCellDelegate!
     
@@ -42,11 +43,11 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     }
 
     func bind(post: PostView){
-        
         self.post = post
         self.userName.text = "@\(post.autor.username)"
         self.postText.text = post.postMessage
         self.likeCount.text = "\(post.curtidas)"
+        self.timeText.text = post.dateString
         if post.curtido == false{
             self.like.tintColor = .gray
         } else {

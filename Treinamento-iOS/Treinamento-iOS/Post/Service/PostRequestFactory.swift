@@ -36,4 +36,11 @@ class PostRequestFactory {
         
         return Alamofire.request(baseUrl+"/postagem/\(id)", method: .delete, headers: SessionControl.headers)
     }
+    
+    static func updtPost(id: Int, postMsg: String) -> DataRequest {
+        
+        let param = ["mensagem":postMsg]
+        
+        return Alamofire.request(baseUrl+"/postagem/\(id)", method: .put, parameters: param, encoding: JSONEncoding.default, headers: SessionControl.headers)
+    }
 }

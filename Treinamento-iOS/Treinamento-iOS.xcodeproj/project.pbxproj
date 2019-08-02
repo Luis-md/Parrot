@@ -25,6 +25,7 @@
 		898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515022F0CA7D0099674B /* SearchViewController.swift */; };
 		898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515322F0E2B70099674B /* PostTableViewCell.swift */; };
 		898F515622F0E2B70099674B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 898F515422F0E2B70099674B /* PostTableViewCell.xib */; };
+		89F7DC3D22F4B1A0002878D2 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F7DC3C22F4B1A0002878D2 /* EditViewController.swift */; };
 		F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199B9E22EF625100B2670F /* PostViewModel.swift */; };
 		F6199BA322EF6C0100B2670F /* Autor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA222EF6C0100B2670F /* Autor.swift */; };
 		F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */; };
@@ -60,6 +61,7 @@
 		898F515022F0CA7D0099674B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		898F515322F0E2B70099674B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		898F515422F0E2B70099674B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		89F7DC3C22F4B1A0002878D2 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		F6199B9E22EF625100B2670F /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F6199BA222EF6C0100B2670F /* Autor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autor.swift; sourceTree = "<group>"; };
 		F6199BA822EF6E4A00B2670F /* AutorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				898F515222F0E28E0099674B /* cells */,
 				837EF83B22EB2B1500F62825 /* PostViewController.swift */,
+				89F7DC3C22F4B1A0002878D2 /* EditViewController.swift */,
 				898F515022F0CA7D0099674B /* SearchViewController.swift */,
 				898F514A22F0C53C0099674B /* PostTabBarViewController.swift */,
 			);
@@ -428,6 +431,7 @@
 				837EF83722EB255500F62825 /* Post.swift in Sources */,
 				F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */,
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
+				89F7DC3D22F4B1A0002878D2 /* EditViewController.swift in Sources */,
 				836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */,
 				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
 				898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */,

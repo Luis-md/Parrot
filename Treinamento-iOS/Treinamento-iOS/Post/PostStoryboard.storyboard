@@ -38,7 +38,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="O que você está sentido?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CFy-8T-FJc">
                                         <rect key="frame" x="64" y="0.0" width="223" height="88"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -108,6 +108,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOV-KA-ezN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-458.39999999999998" y="-331.48425787106447"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="Rc9-T1-Qie">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" id="AF1-qv-LaD" customClass="EditViewController" customModule="Treinamento_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eun-7l-rVN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4w-a0-zOe">
+                                <rect key="frame" x="16" y="36" width="343" height="88"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Edit Post" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zd2-GV-IAp">
+                                        <rect key="frame" x="57" y="0.0" width="234" height="88"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="OzI-vo-Uco"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="49g-Sd-jfu">
+                                        <rect key="frame" x="12" y="12" width="39" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="6N1-TV-c7W"/>
+                                            <constraint firstAttribute="height" constant="40" id="g7w-R0-De8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="49g-Sd-jfu" firstAttribute="leading" secondItem="c4w-a0-zOe" secondAttribute="leading" constant="12" id="0Qn-Qw-2qa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zd2-GV-IAp" secondAttribute="trailing" constant="52" id="Cwv-BE-Ehf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zd2-GV-IAp" secondAttribute="bottom" id="Z8b-FC-ac8"/>
+                                    <constraint firstAttribute="height" constant="88" id="j96-cO-mP8"/>
+                                    <constraint firstItem="Zd2-GV-IAp" firstAttribute="leading" secondItem="49g-Sd-jfu" secondAttribute="trailing" constant="6" id="pnh-iq-BDc"/>
+                                    <constraint firstItem="Zd2-GV-IAp" firstAttribute="top" secondItem="c4w-a0-zOe" secondAttribute="top" id="vHo-my-nXJ"/>
+                                    <constraint firstItem="49g-Sd-jfu" firstAttribute="top" secondItem="c4w-a0-zOe" secondAttribute="top" constant="12" id="xsU-n9-WML"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXw-g9-sxj">
+                                <rect key="frame" x="155.5" y="153" width="69" height="30"/>
+                                <state key="normal" title="Confirmar">
+                                    <color key="titleColor" red="0.88627450980392153" green="0.32156862745098036" blue="0.32156862745098036" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editBtn:" destination="AF1-qv-LaD" eventType="touchUpInside" id="06a-07-QYl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S2p-d7-8HX" firstAttribute="trailing" secondItem="c4w-a0-zOe" secondAttribute="trailing" constant="16" id="3hZ-pD-qWd"/>
+                            <constraint firstItem="c4w-a0-zOe" firstAttribute="top" secondItem="S2p-d7-8HX" secondAttribute="top" constant="16" id="5gf-L5-l6O"/>
+                            <constraint firstItem="S2p-d7-8HX" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lXw-g9-sxj" secondAttribute="bottom" constant="16" id="NOC-vv-E2A"/>
+                            <constraint firstItem="lXw-g9-sxj" firstAttribute="centerX" secondItem="Zd2-GV-IAp" secondAttribute="centerX" id="PlW-Vh-9Pb"/>
+                            <constraint firstItem="lXw-g9-sxj" firstAttribute="top" secondItem="Zd2-GV-IAp" secondAttribute="bottom" constant="29" id="Ru7-iz-MoW"/>
+                            <constraint firstItem="c4w-a0-zOe" firstAttribute="leading" secondItem="S2p-d7-8HX" secondAttribute="leading" constant="16" id="q4r-yH-rIB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S2p-d7-8HX"/>
+                    </view>
+                    <connections>
+                        <outlet property="editTextView" destination="Zd2-GV-IAp" id="6Nz-4l-O5J"/>
+                        <outlet property="fullEditView" destination="c4w-a0-zOe" id="jqI-vV-UKQ"/>
+                        <outlet property="profilePic" destination="49g-Sd-jfu" id="wYl-vu-qoA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sd-JB-kjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="-331.48425787106447"/>
         </scene>
     </scenes>
     <resources>

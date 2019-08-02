@@ -83,17 +83,39 @@ extension PostViewController : PostTableViewCellDelegate {
     
     func optionPost(id: Int) {
         
-        let optionMenu = UIAlertController(title: nil, message: "Escolha uma opção", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: "O que deseja?", message: "Escolha uma opção", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .default) { (UIAlertAction) in
             self.postagemService.delPost(id: id)
+
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let editAction = UIAlertAction(title: "Editar", style: .default) { (UIAlertAction) in
+            
+            let controller = StoryboardScene.PostStoryboard.editViewController.instantiate()
+            controller.id = id
+            controller.delegate = self
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+            
+        }
         
         optionMenu.addAction(deleteAction)
+        optionMenu.addAction(editAction)
         optionMenu.addAction(cancelAction)
         
-        self.present(optionMenu, animated: true, completion: nil)
+        self.present(optionMenu, animated: true)
     }
+}
+
+extension PostViewController : EditViewControllerDelegate {
+    func edit(id: Int) {
+        self.posts = PostViewModel.getPosts()
+        self.tableView.reloadData()
+    }
+    
+    
 }

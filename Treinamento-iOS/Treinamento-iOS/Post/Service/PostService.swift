@@ -88,6 +88,26 @@ class PostService {
             switch response.result {
             case .success:
                 
+               // isso irá deletar a postagem do armazenamento local
+                    PostViewModel.delPost(id: id)
+                //}
+                self.delegate.success()
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
+    }
+    
+    func editPost(id: Int, postMsg: String) {
+        
+        PostRequestFactory.updtPost(id: id, postMsg: postMsg).validate().responseObject { (response: DataResponse<Post>) in
+            
+            switch response.result {
+                
+            case .success:
+                
                 if let post = response.result.value {
                     PostViewModel.saveAll(objects: [post])
                 }
