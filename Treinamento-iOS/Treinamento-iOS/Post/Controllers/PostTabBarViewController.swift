@@ -17,7 +17,11 @@ class PostTabBarViewController: UITabBarController {
         controllerPosts.tabBarItem.title = "Home"
         controllerPosts.tabBarItem.image = Asset.houseOutline.image
         
-        self.viewControllers = [controllerPosts]
+        let controllerPerfil = StoryboardScene.PostStoryboard.editPerfilViewController.instantiate()
+        controllerPerfil.tabBarItem.title = "Perfil"
+        controllerPerfil.tabBarItem.image = Asset.perfil1.image
+        
+        self.viewControllers = [controllerPosts, controllerPerfil]
     }
 }
 

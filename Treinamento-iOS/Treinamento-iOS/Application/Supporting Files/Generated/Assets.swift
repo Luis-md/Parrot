@@ -49,6 +49,7 @@ internal enum Asset {
   internal static let edit = ImageAsset(name: "edit")
   internal static let houseOutline = ImageAsset(name: "house-outline")
   internal static let likeHeart = ImageAsset(name: "likeHeart")
+  internal static let perfil1 = ImageAsset(name: "perfil-1")
   internal static let perfil = ImageAsset(name: "perfil")
 
   // swiftlint:disable trailing_comma
@@ -60,6 +61,7 @@ internal enum Asset {
     edit,
     houseOutline,
     likeHeart,
+    perfil1,
     perfil,
   ]
   // swiftlint:enable trailing_comma
