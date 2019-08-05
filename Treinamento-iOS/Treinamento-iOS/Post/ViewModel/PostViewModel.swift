@@ -71,6 +71,17 @@ class PostViewModel {
         return postsView
     }
     
+    static func getAsViewPerfil(posts: List<Post>) -> [PostView] {
+        
+        var postsView: [PostView] = []
+        posts.forEach { (post) in
+            
+            postsView.append(self.getAsView(post: post))
+        }
+        
+        return postsView
+    }
+    
     static func get() -> [Post] {
         let results = uiRealm.objects(Post.self)
         

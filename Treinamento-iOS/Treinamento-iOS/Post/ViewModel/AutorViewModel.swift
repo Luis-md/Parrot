@@ -18,7 +18,8 @@ struct AutorView {
 
 
 class AutorViewModel{
-
+    
+    //precisa ler do banco -
     static func getAsView(autor: Autor?) -> AutorView {
         guard let autor = autor else {
             
@@ -35,7 +36,7 @@ class AutorViewModel{
         
         return autorView
     }
-
+    //so precisa caso tenha que enviar um objeto inteiro
     static func getAsModel(autorView: AutorView) -> Autor {
         
         let autor = Autor()

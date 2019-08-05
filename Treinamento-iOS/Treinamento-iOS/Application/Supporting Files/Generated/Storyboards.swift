@@ -67,10 +67,13 @@ internal enum StoryboardScene {
 
     internal static let viewController = SceneType<Treinamento_iOS.ViewController>(storyboard: Main.self, identifier: "ViewController")
   }
+  internal enum Perfil: StoryboardType {
+    internal static let storyboardName = "Perfil"
+
+    internal static let editPerfilViewController = SceneType<Treinamento_iOS.EditPerfilViewController>(storyboard: Perfil.self, identifier: "EditPerfilViewController")
+  }
   internal enum PostStoryboard: StoryboardType {
     internal static let storyboardName = "PostStoryboard"
-
-    internal static let editPerfilViewController = SceneType<Treinamento_iOS.EditPerfilViewController>(storyboard: PostStoryboard.self, identifier: "EditPerfilViewController")
 
     internal static let editViewController = SceneType<Treinamento_iOS.EditViewController>(storyboard: PostStoryboard.self, identifier: "EditViewController")
 

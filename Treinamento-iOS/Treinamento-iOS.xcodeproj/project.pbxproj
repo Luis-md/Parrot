@@ -23,6 +23,10 @@
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
 		8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */; };
 		8903639E22F8A256008B1034 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639D22F8A256008B1034 /* Perfil.swift */; };
+		890363A522F8B797008B1034 /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890363A422F8B797008B1034 /* Perfil.storyboard */; };
+		890363A722F8B85E008B1034 /* PerfilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A622F8B85E008B1034 /* PerfilService.swift */; };
+		890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A822F8B877008B1034 /* PerfilRequestFactory.swift */; };
+		890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363AA22F8BF64008B1034 /* PerfilViewModel.swift */; };
 		898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F514A22F0C53C0099674B /* PostTabBarViewController.swift */; };
 		898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515022F0CA7D0099674B /* SearchViewController.swift */; };
 		898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515322F0E2B70099674B /* PostTableViewCell.swift */; };
@@ -61,6 +65,10 @@
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPerfilViewController.swift; sourceTree = "<group>"; };
 		8903639D22F8A256008B1034 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
+		890363A422F8B797008B1034 /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
+		890363A622F8B85E008B1034 /* PerfilService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilService.swift; sourceTree = "<group>"; };
+		890363A822F8B877008B1034 /* PerfilRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilRequestFactory.swift; sourceTree = "<group>"; };
+		890363AA22F8BF64008B1034 /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		898F514A22F0C53C0099674B /* PostTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTabBarViewController.swift; sourceTree = "<group>"; };
 		898F515022F0CA7D0099674B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		898F515322F0E2B70099674B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 				890363A222F8B65C008B1034 /* Controller */,
 				890363A122F8B636008B1034 /* Service */,
 				890363A022F8B5F1008B1034 /* Model */,
+				890363A422F8B797008B1034 /* Perfil.storyboard */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -223,6 +232,8 @@
 		890363A122F8B636008B1034 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				890363A622F8B85E008B1034 /* PerfilService.swift */,
+				890363A822F8B877008B1034 /* PerfilRequestFactory.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 		890363A322F8B66A008B1034 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				890363AA22F8BF64008B1034 /* PerfilViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,6 +407,7 @@
 			files = (
 				F66C789322D8BC4D001B5FDA /* LaunchScreen.storyboard in Resources */,
 				F66C78A122D8BE32001B5FDA /* Colors.json in Resources */,
+				890363A522F8B797008B1034 /* Perfil.storyboard in Resources */,
 				F66C789F22D8BE16001B5FDA /* Localizable.strings in Resources */,
 				837EF83922EB2A9700F62825 /* PostStoryboard.storyboard in Resources */,
 				898F515622F0E2B70099674B /* PostTableViewCell.xib in Resources */,
@@ -474,6 +487,7 @@
 				F66C78A822D8CF65001B5FDA /* Colors.swift in Sources */,
 				F66C78AA22D8D453001B5FDA /* Assets.swift in Sources */,
 				F66C78A722D8CF65001B5FDA /* Localizable.swift in Sources */,
+				890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */,
 				837EF83722EB255500F62825 /* Post.swift in Sources */,
 				8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */,
 				F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */,
@@ -486,12 +500,14 @@
 				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,
+				890363A722F8B85E008B1034 /* PerfilService.swift in Sources */,
 				8903639E22F8A256008B1034 /* Perfil.swift in Sources */,
 				837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */,
 				837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */,
 				836E2B5822E9FA3C002CC0B6 /* ViewController.swift in Sources */,
 				836E2B4F22E9E017002CC0B6 /* UsuarioViewModel.swift in Sources */,
 				F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */,
+				890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */,
 				836E2B4922E9D1E0002CC0B6 /* AutenticacaoService.swift in Sources */,
 				836557C922E89A1600EFE306 /* User.swift in Sources */,
 				836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */,
