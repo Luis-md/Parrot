@@ -16,16 +16,17 @@ class Perfil: Object, Mappable{
 
     @objc dynamic var autor: Autor?
     var posts = List<Post>()
+    var id = RealmOptional<Int>()
+
     
     required convenience init?(map: Map) {
         self.init()
     }
     
     func mapping(map: Map){
-        
-        self.autor          <- map["autor"]
+        self.id.value       <- map["usuario.id"]
+        self.autor          <- map["usuario"]
         self.posts          <- map["postagens"]
     }
-    
 }
 

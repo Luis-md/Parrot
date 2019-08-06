@@ -108,6 +108,7 @@ class PostService {
                 
             case .success:
                 
+                //checando se o valor é nulo ou nao
                 if let post = response.result.value {
                     PostViewModel.saveAll(objects: [post])
                 }

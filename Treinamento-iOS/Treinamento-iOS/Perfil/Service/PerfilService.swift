@@ -24,8 +24,22 @@ class PerfilService{
     }
     
     func getPerfil(id: Int){
-        
-        
+        PerfilRequestFactory.getPerfil(id: id).validate().responseObject { (response: DataResponse<Perfil>) in
+            
+            switch response.result {
+                
+            case .success:
+                
+                //checando se o valor é nulo ou nao
+                if let perfil = response.result.value {
+                    PerfilViewModel.saveAll(objects: perfil)
+                }
+                self.delegate.success()
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
     }
 }
-

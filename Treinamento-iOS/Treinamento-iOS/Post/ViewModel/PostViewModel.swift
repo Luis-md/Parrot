@@ -109,7 +109,7 @@ class PostViewModel {
         post.id.value = postView.id
         post.postMessage = postView.postMessage
         post.curtidas.value = postView.curtidas
-//        post.criado_em.value = postView.criado_em
+//      post.criado_em.value = postView.criado_em
         post.autor = AutorViewModel.getAsModel(autorView: postView.autor)
         post.curtido.value = postView.curtido
         
@@ -121,7 +121,6 @@ class PostViewModel {
         let results = uiRealm.objects(Post.self)
         
         try? uiRealm.write {
-            
             uiRealm.delete(results)
         }
     }
@@ -130,7 +129,6 @@ class PostViewModel {
         let result = uiRealm.object(ofType: Post.self, forPrimaryKey: id)!
         
         try? uiRealm.write {
-            
             uiRealm.delete(result)
         }
     }

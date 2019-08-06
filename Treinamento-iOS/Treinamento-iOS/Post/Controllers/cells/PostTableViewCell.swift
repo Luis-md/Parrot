@@ -13,7 +13,6 @@ import Reusable //facilita para a gente poder colocar a celula na Table View
 protocol PostTableViewCellDelegate {
     
     func curtido(id: Int, curtido: Bool)
-    
     func optionPost(id: Int)
 }
 
@@ -29,10 +28,6 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     var delegate: PostTableViewCellDelegate!
     
     var post: PostView!
-    
-    
-    //Time variables
-    
 
 
     

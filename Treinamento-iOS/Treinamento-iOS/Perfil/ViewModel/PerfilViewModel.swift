@@ -35,6 +35,13 @@ class PerfilViewModel{
             uiRealm.delete(results)
         }
     }
+
+    static func get(by id: Int) -> Perfil? {
+        
+        let results = uiRealm.object(ofType: Perfil.self, forPrimaryKey: id)
+        
+        return results
+    }
     
     static func getAsView(perfil: Perfil?) -> PerfilView {
         guard let perfil = perfil else {
@@ -49,6 +56,10 @@ class PerfilViewModel{
         return perfilView
     }
  
+    static func getPerfil(id: Int) -> PerfilView {
+        
+        return self.getAsView(perfil: self.get(by: id))
+    }
     
     
 }

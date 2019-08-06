@@ -13,7 +13,7 @@ class SessionControl {
     static var headers: [String : String] = [:]
     
     static var user: User? {
-        return uiRealm.objects(User.self).first
+       return uiRealm.objects(User.self).first
     }
     
     static var isSessionActive: Bool {
