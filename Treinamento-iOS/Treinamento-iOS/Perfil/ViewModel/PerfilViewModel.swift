@@ -16,14 +16,14 @@ struct PerfilView {
 
 class PerfilViewModel{
     
-    static func saveAll(objects: Perfil, clear: Bool = false){
+    static func save(object: Perfil, clear: Bool = false){
         
         if clear{
             self.deletePerfil()
         }
         
         try? uiRealm.write{
-            uiRealm.add(objects, update: .all)
+            uiRealm.add(object, update: .all)
         }
     }
     

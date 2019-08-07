@@ -26,7 +26,6 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var timeText: UILabel!
     
     var delegate: PostTableViewCellDelegate!
-    
     var post: PostView!
 
 

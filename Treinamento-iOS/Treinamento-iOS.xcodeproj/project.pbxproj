@@ -21,6 +21,7 @@
 		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
 		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
+		8901C03622FB3CAD008F9832 /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901C03522FB3CAD008F9832 /* ObjectMapper.swift */; };
 		8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */; };
 		8903639E22F8A256008B1034 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639D22F8A256008B1034 /* Perfil.swift */; };
 		890363A522F8B797008B1034 /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890363A422F8B797008B1034 /* Perfil.storyboard */; };
@@ -64,6 +65,7 @@
 		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		8901C03522FB3CAD008F9832 /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
 		8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPerfilViewController.swift; sourceTree = "<group>"; };
 		8903639D22F8A256008B1034 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		890363A422F8B797008B1034 /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				F66C788822D8BC45001B5FDA /* AppDelegate.swift */,
 				836E2B5022E9E120002CC0B6 /* SessionControl.swift */,
 				836E2B5422E9F11D002CC0B6 /* ScreenManager.swift */,
+				8901C03522FB3CAD008F9832 /* ObjectMapper.swift */,
 				F66C789B22D8BDA4001B5FDA /* Supporting Files */,
 			);
 			path = Application;
@@ -503,6 +506,7 @@
 				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,
+				8901C03622FB3CAD008F9832 /* ObjectMapper.swift in Sources */,
 				890363A722F8B85E008B1034 /* PerfilService.swift in Sources */,
 				8903639E22F8A256008B1034 /* Perfil.swift in Sources */,
 				837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */,

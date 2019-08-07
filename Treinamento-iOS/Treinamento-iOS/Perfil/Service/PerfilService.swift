@@ -32,7 +32,7 @@ class PerfilService{
                 
                 //checando se o valor é nulo ou nao
                 if let perfil = response.result.value {
-                    PerfilViewModel.saveAll(objects: perfil)
+                    PerfilViewModel.save(object: perfil)
                 }
                 self.delegate.success()
                 
@@ -40,6 +40,24 @@ class PerfilService{
                 
                 self.delegate.failure(error: error.localizedDescription)
             }
+        }
+    }
+    
+    func updtPerfil(name: String, password: String){
+        PerfilRequestFactory.updtUser(nome: name, password: password).validate().responseObject { (response: DataResponse<Perfil>) in
+            
+            switch response.result {
+            case .success:
+                if let perfil = response.result.value {
+                    PerfilViewModel.save(object: perfil)
+                }
+                self.delegate.success()
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        
         }
     }
 }

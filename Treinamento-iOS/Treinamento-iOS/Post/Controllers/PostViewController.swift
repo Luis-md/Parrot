@@ -116,6 +116,4 @@ extension PostViewController : EditViewControllerDelegate {
         self.posts = PostViewModel.getPosts()
         self.tableView.reloadData()
     }
-    
-    
 }
