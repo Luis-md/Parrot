@@ -17,7 +17,7 @@ class Amizade: Object, Mappable {
     @objc dynamic var nome: String?
     @objc dynamic var email: String?
     @objc dynamic var username: String?
-    @objc dynamic var pic: String?
+    //@objc dynamic var pic: String?
     //@objc dynamic var amigos = [Array]()
     
     required convenience init?(map: Map) {
@@ -31,6 +31,9 @@ class Amizade: Object, Mappable {
     func mapping(map: Map) {
         
         self.id.value       <- map["id"]
+        self.nome           <- map["nome"]
+        self.email          <- map["email"]
+        self.username       <- map["username"]
     }
     
     

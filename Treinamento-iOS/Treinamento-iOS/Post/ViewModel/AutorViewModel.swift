@@ -19,6 +19,18 @@ struct AutorView {
 
 class AutorViewModel{
     
+    static func saveAll(objects: [Autor], clear: Bool = false){
+        
+        if clear{
+            self.deleteAutor()
+        }
+        
+        try? uiRealm.write{
+            uiRealm.add(objects, update: .all)
+        }
+    }
+    
+    
     //precisa ler do banco -
     static func getAsView(autor: Autor?) -> AutorView {
         guard let autor = autor else {

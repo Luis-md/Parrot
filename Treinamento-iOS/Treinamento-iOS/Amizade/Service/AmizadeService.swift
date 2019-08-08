@@ -19,35 +19,22 @@ class AmizadeService {
     
     func getPerfil(nome: String){
         
-        AmizadeRequestFactory.getPerfil(nome: nome).validate().response { (response: DataResponse<Perfil>) in
-            
-            switch response.result {
-                
-            case .success:
-                
-                if let perfil = response.result.value {
-                    
-                    perfilViewModel.save(object: perfil)
-                }
-            }
-        }
+        AmizadeRequestFactory.getPerfil(nome: nome).validate().responseArray { (response: DataResponse<[Autor]>) in
         
-        RequestFactory.getPerfil(id: id).validate().responseObject { (response: DataResponse<Perfil>) in
-            
             switch response.result {
                 
             case .success:
                 
-                //checando se o valor é nulo ou nao
-                if let perfil = response.result.value {
-                    PerfilViewModel.save(object: perfil)
+                if let autor = response.result.value {
+                    
+                    AutorViewModel.saveAll(objects: autor, clear: true)
                 }
-                self.delegate.success()
                 
             case .failure(let error):
                 
-                self.delegate.failure(error: error.localizedDescription)
+                print(error.localizedDescription)
             }
+
         }
     }
 }

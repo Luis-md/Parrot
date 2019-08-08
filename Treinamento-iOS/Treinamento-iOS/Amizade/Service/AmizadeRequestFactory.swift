@@ -13,6 +13,8 @@ class AmizadeRequestFactory{
     
     static func getPerfil(nome: String) -> DataRequest {
         
-        return Alamofire.request("\(baseUrl)/usuario?busca=\(nome)", method: .get, headers: SessionControl.headers)
+        let params = ["busca" : nome]
+        
+        return Alamofire.request("\(baseUrl)/usuario", method: .get, parameters: params, encoding: JSONEncoding.default, headers: SessionControl.headers)
     }
 }
