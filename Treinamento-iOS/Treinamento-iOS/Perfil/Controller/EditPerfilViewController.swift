@@ -31,7 +31,7 @@ class EditPerfilViewController: UIViewController {
         perfilService = PerfilService(delegate: self)
         self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .done, target: self, action: #selector(method(for:)))
+       /* self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .done, target: self, action: #selector(method(for:)))*/
     }
     
     @IBAction func updtInfo(_ sender: Any) {
@@ -48,9 +48,8 @@ class EditPerfilViewController: UIViewController {
 
 extension EditPerfilViewController: perfilDelegate {
     func success() {
-        self.delegate.updtProfile(name: name.text!, password: password.text!)
-        self.presentedViewController?.dismiss(animated: true, completion: nil)
         
+        self.navigationController?.popViewController(animated: true)
     }
     
     func failure(error: String) {

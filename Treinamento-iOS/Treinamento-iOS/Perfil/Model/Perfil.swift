@@ -23,10 +23,14 @@ class Perfil: Object, Mappable{
         self.init()
     }
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     func mapping(map: Map){
         self.id.value       <- map["usuario.id"]
         self.autor          <- map["usuario"]
-        self.posts          <- map["postagens"]
+        self.posts          <- (map["postagens"], ListTransform<Post>())
     }
 }
 

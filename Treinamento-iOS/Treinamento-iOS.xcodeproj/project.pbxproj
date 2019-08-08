@@ -28,6 +28,11 @@
 		890363A722F8B85E008B1034 /* PerfilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A622F8B85E008B1034 /* PerfilService.swift */; };
 		890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A822F8B877008B1034 /* PerfilRequestFactory.swift */; };
 		890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363AA22F8BF64008B1034 /* PerfilViewModel.swift */; };
+		896F735922FCAE1200BF8096 /* AmizadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735822FCAE1200BF8096 /* AmizadeService.swift */; };
+		896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */; };
+		896F735D22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */; };
+		896F735F22FCB1E600BF8096 /* AmizadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735E22FCB1E600BF8096 /* AmizadeController.swift */; };
+		896F736122FCB3D600BF8096 /* Amizade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F736022FCB3D600BF8096 /* Amizade.swift */; };
 		898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F514A22F0C53C0099674B /* PostTabBarViewController.swift */; };
 		898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515022F0CA7D0099674B /* SearchViewController.swift */; };
 		898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898F515322F0E2B70099674B /* PostTableViewCell.swift */; };
@@ -72,6 +77,11 @@
 		890363A622F8B85E008B1034 /* PerfilService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilService.swift; sourceTree = "<group>"; };
 		890363A822F8B877008B1034 /* PerfilRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilRequestFactory.swift; sourceTree = "<group>"; };
 		890363AA22F8BF64008B1034 /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
+		896F735822FCAE1200BF8096 /* AmizadeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeService.swift; sourceTree = "<group>"; };
+		896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeRequestFactory.swift; sourceTree = "<group>"; };
+		896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AmizadeStoryboard.storyboard; sourceTree = "<group>"; };
+		896F735E22FCB1E600BF8096 /* AmizadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeController.swift; sourceTree = "<group>"; };
+		896F736022FCB3D600BF8096 /* Amizade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amizade.swift; sourceTree = "<group>"; };
 		898F514A22F0C53C0099674B /* PostTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTabBarViewController.swift; sourceTree = "<group>"; };
 		898F515022F0CA7D0099674B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		898F515322F0E2B70099674B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -258,6 +268,50 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		896F735322FCA9DF00BF8096 /* Amizade */ = {
+			isa = PBXGroup;
+			children = (
+				896F735522FCAC8700BF8096 /* Model */,
+				896F735622FCAC9000BF8096 /* Service */,
+				896F735422FCAC7D00BF8096 /* ViewModel */,
+				896F735722FCAC9800BF8096 /* Controller */,
+				896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */,
+			);
+			path = Amizade;
+			sourceTree = "<group>";
+		};
+		896F735422FCAC7D00BF8096 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		896F735522FCAC8700BF8096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				896F736022FCB3D600BF8096 /* Amizade.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		896F735622FCAC9000BF8096 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				896F735822FCAE1200BF8096 /* AmizadeService.swift */,
+				896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		896F735722FCAC9800BF8096 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				896F735E22FCB1E600BF8096 /* AmizadeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		898F515222F0E28E0099674B /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				F66C789A22D8BC87001B5FDA /* Application */,
+				896F735322FCA9DF00BF8096 /* Amizade */,
 				8903639F22F8B5D6008B1034 /* Perfil */,
 				837EF83422EB23C400F62825 /* Post */,
 				836557C622E899B100EFE306 /* Login */,
@@ -419,6 +474,7 @@
 				898F515622F0E2B70099674B /* PostTableViewCell.xib in Resources */,
 				F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */,
 				F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */,
+				896F735D22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +551,7 @@
 				F66C78A722D8CF65001B5FDA /* Localizable.swift in Sources */,
 				890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */,
 				837EF83722EB255500F62825 /* Post.swift in Sources */,
+				896F736122FCB3D600BF8096 /* Amizade.swift in Sources */,
 				8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */,
 				F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */,
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
@@ -515,8 +572,11 @@
 				836E2B4F22E9E017002CC0B6 /* UsuarioViewModel.swift in Sources */,
 				89C815C422F9ED6600BFD312 /* PerfilViewController.swift in Sources */,
 				F6199BA922EF6E4A00B2670F /* AutorViewModel.swift in Sources */,
+				896F735F22FCB1E600BF8096 /* AmizadeController.swift in Sources */,
+				896F735922FCAE1200BF8096 /* AmizadeService.swift in Sources */,
 				890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */,
 				836E2B4922E9D1E0002CC0B6 /* AutenticacaoService.swift in Sources */,
+				896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */,
 				836557C922E89A1600EFE306 /* User.swift in Sources */,
 				836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */,
 			);

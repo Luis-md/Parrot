@@ -47,16 +47,18 @@ extension PostViewController: PostServiceDelegate {
         
         self.posts = PostViewModel.getPosts()
         self.tableView.reloadData()
-        print(posts.count)
+        //print(posts.count)
     }
     
     func failure(error: String) {
         
         print(error)
+        
     }
 }
 
-extension PostViewController : UITableViewDataSource, UITableViewDelegate{
+extension PostViewController : UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
