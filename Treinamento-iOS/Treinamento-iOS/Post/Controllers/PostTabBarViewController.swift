@@ -21,7 +21,12 @@ class PostTabBarViewController: UITabBarController {
         controllerPerfil.tabBarItem.title = "Perfil"
         controllerPerfil.tabBarItem.image = Asset.perfil1.image
         
-        self.viewControllers = [controllerPosts, controllerPerfil]
+        let controllerSearch = StoryboardScene.AmizadeStoryboard.amizadeViewController.instantiate()
+        controllerSearch.tabBarItem.title = "Search"
+        controllerSearch.tabBarItem.image = Asset.lupa.image
+        
+        
+        self.viewControllers = [controllerPosts, controllerSearch, controllerPerfil]
     }
 }
 

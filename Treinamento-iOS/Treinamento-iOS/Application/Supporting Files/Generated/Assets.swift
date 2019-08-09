@@ -49,6 +49,7 @@ internal enum Asset {
   internal static let edit = ImageAsset(name: "edit")
   internal static let houseOutline = ImageAsset(name: "house-outline")
   internal static let likeHeart = ImageAsset(name: "likeHeart")
+  internal static let lupa = ImageAsset(name: "lupa")
   internal static let perfil1 = ImageAsset(name: "perfil-1")
   internal static let perfil = ImageAsset(name: "perfil")
 
@@ -61,6 +62,7 @@ internal enum Asset {
     edit,
     houseOutline,
     likeHeart,
+    lupa,
     perfil1,
     perfil,
   ]

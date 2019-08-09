@@ -55,6 +55,8 @@ internal extension UIViewController {
 internal enum StoryboardScene {
   internal enum AmizadeStoryboard: StoryboardType {
     internal static let storyboardName = "AmizadeStoryboard"
+
+    internal static let amizadeViewController = SceneType<Treinamento_iOS.AmizadeViewController>(storyboard: AmizadeStoryboard.self, identifier: "AmizadeViewController")
   }
   internal enum LaunchScreen: StoryboardType {
     internal static let storyboardName = "LaunchScreen"

@@ -20,6 +20,9 @@ class Autor: Object, Mappable {
     @objc dynamic var username: String?
     //@objc dynamic var foto: String?
     @objc dynamic var token: String?
+    var amigos = List<Autor>()
+    
+    
     
     required convenience init?(map: Map) {
         self.init()

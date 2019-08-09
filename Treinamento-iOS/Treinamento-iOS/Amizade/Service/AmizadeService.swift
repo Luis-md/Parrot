@@ -10,14 +10,20 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-protocol AmizadeDelegate {
+protocol AmizadeServiceDelegate {
     func success()
     func failure(error: String)
 }
 
 class AmizadeService {
     
-    func getPerfil(nome: String){
+    var delegate: AmizadeServiceDelegate!
+    init(delegate: AmizadeServiceDelegate) {
+        self.delegate = delegate
+    }
+    
+    
+    func getPerfis(nome: String){
         
         AmizadeRequestFactory.getPerfil(nome: nome).validate().responseArray { (response: DataResponse<[Autor]>) in
         

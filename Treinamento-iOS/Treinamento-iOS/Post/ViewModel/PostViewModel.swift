@@ -81,7 +81,7 @@ class PostViewModel {
         
         return postsView
     }
-    
+    //-------------------------
     static func get() -> [Post] {
         let results = uiRealm.objects(Post.self)
         
@@ -95,7 +95,7 @@ class PostViewModel {
         
         return self.getAsView(posts: self.get()).sorted(by: {$0.criado_em > $1.criado_em})
     }
-    
+    //-----------------
     static func get(by id: Int) -> PostView {
         
         let result = uiRealm.object(ofType: Post.self, forPrimaryKey: id)
