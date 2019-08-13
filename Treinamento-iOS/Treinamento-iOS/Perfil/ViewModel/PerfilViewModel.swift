@@ -61,3 +61,4 @@ class PerfilViewModel{
         return self.getAsView(perfil: self.get(by: id))
     }
 }
+

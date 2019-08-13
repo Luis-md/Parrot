@@ -18,11 +18,11 @@ class AmizadeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //setar delegate da SearchBar
         self.amizadeService = AmizadeService(delegate: self)
         
         self.tableView.delegate = self
-        self.tableView.dataSource = self
+        self.tableView.dataSource = self        
         self.tableView.register(cellType: SearchTableViewCell.self)
         
         self.amizadeService.getPerfis(nome: "matelalove")
@@ -47,14 +47,15 @@ extension AmizadeViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }
 
 extension AmizadeViewController : AmizadeServiceDelegate {
     func success() {
-        
-        print(AutorViewModel.ge)
-        
+        self.autores = AutorViewModel.getAutors()
+        self.tableView.reloadData()
     }
     
     func failure(error: String) {
@@ -64,8 +65,9 @@ extension AmizadeViewController : AmizadeServiceDelegate {
     
 }
 
-/*extension AmizadeViewController : SearchTableViewCellDelegate {
-    func add(name: String) {
-            
+extension AmizadeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
-}*/
+}

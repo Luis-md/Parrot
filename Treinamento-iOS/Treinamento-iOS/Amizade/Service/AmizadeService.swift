@@ -26,21 +26,21 @@ class AmizadeService {
     func getPerfis(nome: String){
         
         AmizadeRequestFactory.getPerfil(nome: nome).validate().responseArray { (response: DataResponse<[Autor]>) in
-        
+            
             switch response.result {
                 
             case .success:
                 
                 if let autor = response.result.value {
-                    
                     AutorViewModel.saveAll(objects: autor, clear: true)
                 }
                 
-            case .failure(let error):
+                self.delegate.success()
                 
-                print(error.localizedDescription)
+            case .failure(let error):
+                self.delegate.failure(error: error.localizedDescription)
             }
-
+            
         }
     }
 }

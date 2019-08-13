@@ -69,5 +69,31 @@ class AutorViewModel{
             uiRealm.delete(results)
         }
     }
-
+    
+    static func getAsView(autors: [Autor]) -> [AutorView] {
+        
+        var autorsView: [AutorView] = []
+        autors.forEach { (autor) in
+            
+            autorsView.append(self.getAsView(autor: autor))
+        }
+        
+        return autorsView
+    }
+    
+    static func get() -> [Autor] {
+        let results = uiRealm.objects(Autor.self)
+        
+        var autors: [Autor] = []
+        autors.append(contentsOf: results)
+        
+        return autors
+    }
+    
+    static func getAutors() -> [AutorView] {
+        
+        return self.getAsView(autors: self.get())
+    }
+    
+    
 }

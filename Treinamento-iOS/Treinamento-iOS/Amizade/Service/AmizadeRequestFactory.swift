@@ -15,6 +15,6 @@ class AmizadeRequestFactory{
         
         let params = ["busca" : nome]
         
-        return Alamofire.request("\(baseUrl)/usuario", method: .get, parameters: params, encoding: JSONEncoding.default, headers: SessionControl.headers)
+        return Alamofire.request("\(baseUrl)/usuario", method: .get, parameters: params, headers: SessionControl.headers)
     }
 }

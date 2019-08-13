@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ViewController: UIViewController {
 
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
     }
     @IBAction func login(_ sender: Any) {
         
-        
+        SVProgressHUD.init()
         if let email = emailText.text,
            let password = passwordText.text,
             !email.isEmpty && !password.isEmpty {
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
 
 extension ViewController: AutenticacaoServiceDelegate{
     func success() {
-
+        SVProgressHUD.dismiss()
         ScreenManager.setupInitialViewController()
     }
     

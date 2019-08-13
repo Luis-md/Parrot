@@ -29,8 +29,8 @@
 		890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A822F8B877008B1034 /* PerfilRequestFactory.swift */; };
 		890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363AA22F8BF64008B1034 /* PerfilViewModel.swift */; };
 		8907A29222FDDB5B00BA4701 /* AmizadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */; };
-		8907A29B22FDDD3400BA4701 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907A29922FDDD3400BA4701 /* SearchTableViewCell.swift */; };
-		8907A29C22FDDD3400BA4701 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8907A29A22FDDD3400BA4701 /* SearchTableViewCell.xib */; };
+		8908E5112302055D00C6C9CB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */; };
+		8908E5122302055D00C6C9CB /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */; };
 		896F735922FCAE1200BF8096 /* AmizadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735822FCAE1200BF8096 /* AmizadeService.swift */; };
 		896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */; };
 		896F735D22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */; };
@@ -80,8 +80,8 @@
 		890363A822F8B877008B1034 /* PerfilRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilRequestFactory.swift; sourceTree = "<group>"; };
 		890363AA22F8BF64008B1034 /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeViewController.swift; sourceTree = "<group>"; };
-		8907A29922FDDD3400BA4701 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		8907A29A22FDDD3400BA4701 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		896F735822FCAE1200BF8096 /* AmizadeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeService.swift; sourceTree = "<group>"; };
 		896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeRequestFactory.swift; sourceTree = "<group>"; };
 		896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AmizadeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 		8907A29822FDDD1D00BA4701 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8907A29922FDDD3400BA4701 /* SearchTableViewCell.swift */,
-				8907A29A22FDDD3400BA4701 /* SearchTableViewCell.xib */,
+				8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */,
+				8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				F66C789022D8BC4D001B5FDA /* Assets.xcassets in Resources */,
 				F66C788E22D8BC45001B5FDA /* Main.storyboard in Resources */,
 				896F735D22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard in Resources */,
-				8907A29C22FDDD3400BA4701 /* SearchTableViewCell.xib in Resources */,
+				8908E5122302055D00C6C9CB /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +568,7 @@
 				837EF83722EB255500F62825 /* Post.swift in Sources */,
 				896F736122FCB3D600BF8096 /* Amizade.swift in Sources */,
 				8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */,
-				8907A29B22FDDD3400BA4701 /* SearchTableViewCell.swift in Sources */,
+				8908E5112302055D00C6C9CB /* SearchTableViewCell.swift in Sources */,
 				F6199B9F22EF625100B2670F /* PostViewModel.swift in Sources */,
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
 				89F7DC3D22F4B1A0002878D2 /* EditViewController.swift in Sources */,

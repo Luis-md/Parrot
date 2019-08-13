@@ -15,10 +15,9 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
-    
     var postagemService: PostService!
     var posts: [PostView] = []
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

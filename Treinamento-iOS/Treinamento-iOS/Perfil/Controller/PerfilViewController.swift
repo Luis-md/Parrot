@@ -18,8 +18,8 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var perfilService: PerfilService!
     var perfil: PerfilView?
-    
-
+  
+    var postagemService: PostService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,14 @@ class PerfilViewController: UIViewController {
         self.perfilService = PerfilService(delegate: self)
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
         self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
+       
         
         //Preciso setar esses valores para que consiga carregar as celulas..
         //a partir daqui as coisas passam a funcionar..
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
+    
     }
 
     @IBAction func configBtn(_ sender: Any) {
@@ -68,10 +70,22 @@ extension PerfilViewController : UITableViewDataSource, UITableViewDelegate {
         
         
         let cell = tableView.dequeueReusableCell(for: indexPath) as PostTableViewCell
+        cell.delegate = self
         cell.bind(post: self.perfil!.posts[indexPath.row])
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(perfil!.posts[indexPath.row])
     }
 }
 
-
+extension PerfilViewController : PostTableViewCellDelegate {
+    func curtido(id: Int, curtido: Bool) {
+        self.postagemService.sendLike(id: id, curtido: curtido)
+    }
+    
+    func optionPost(id: Int) {
+        
+    }
+}
