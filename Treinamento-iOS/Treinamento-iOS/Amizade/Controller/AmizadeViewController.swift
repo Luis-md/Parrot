@@ -18,14 +18,14 @@ class AmizadeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setar delegate da SearchBar
+        self.searchBar.delegate = self
         self.amizadeService = AmizadeService(delegate: self)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self        
         self.tableView.register(cellType: SearchTableViewCell.self)
         
-        self.amizadeService.getPerfis(nome: "matelalove")
+        self.amizadeService.getPerfis(nome: "")
     }
     
 
@@ -42,8 +42,8 @@ extension AmizadeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(for: indexPath) as SearchTableViewCell
+        cell.delegate = self
         cell.bind(autor: self.autores[indexPath.row])
-        
         return cell
     }
     
@@ -69,5 +69,15 @@ extension AmizadeViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        self.amizadeService.getPerfis(nome: searchText)
     }
+}
+
+extension AmizadeViewController : SearchTableViewDelegate{
+    func sendAmizade(id: Int) {
+        print("request made")
+        self.amizadeService.sendFriend(id: id)
+    }
+    
+    
 }

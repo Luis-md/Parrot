@@ -39,6 +39,7 @@ class Autor: Object, Mappable {
         self.nome           <- map["nome"]
         self.email          <- map["email"]
         self.username       <- map["username"]
+        self.amigos         <- (map["amigos"], ListTransform<Autor>())
         //     self.foto           <- map["foto"]
         
     }

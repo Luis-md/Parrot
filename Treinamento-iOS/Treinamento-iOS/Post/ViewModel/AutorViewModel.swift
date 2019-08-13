@@ -14,6 +14,8 @@ struct AutorView {
     var email = ""
     var username = ""
     var token = ""
+    var id = 0
+    var amigos: [AutorView] = []
 }
 
 
@@ -30,7 +32,6 @@ class AutorViewModel{
         }
     }
     
-    
     //precisa ler do banco -
     static func getAsView(autor: Autor?) -> AutorView {
         guard let autor = autor else {
@@ -45,6 +46,9 @@ class AutorViewModel{
         autorView.email = autor.email ?? ""
         autorView.username = autor.username ?? ""
         autorView.token = autor.token ?? ""
+        autorView.id = autor.id.value ?? 0
+        autorView.amigos = AutorViewModel.getAsView(autors: autor.amigos)
+
         
         return autorView
     }
@@ -62,7 +66,7 @@ class AutorViewModel{
     }
 
     static func deleteAutor(){
-        let results = uiRealm.objects(Post.self)
+        let results = uiRealm.objects(Autor.self)
         
         try? uiRealm.write {
             
@@ -71,6 +75,17 @@ class AutorViewModel{
     }
     
     static func getAsView(autors: [Autor]) -> [AutorView] {
+        
+        var autorsView: [AutorView] = []
+        autors.forEach { (autor) in
+            
+            autorsView.append(self.getAsView(autor: autor))
+        }
+        
+        return autorsView
+    }
+    
+    static func getAsView(autors: List<Autor>) -> [AutorView] {
         
         var autorsView: [AutorView] = []
         autors.forEach { (autor) in

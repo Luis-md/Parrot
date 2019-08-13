@@ -43,4 +43,25 @@ class AmizadeService {
             
         }
     }
+    
+    func sendFriend(id: Int){
+        
+        AmizadeRequestFactory.sendAmizade(id: id).validate().responseObject { (response: DataResponse<Autor>) in
+            
+            switch response.result {
+                
+            case .success:
+                
+//                if let autor = response.result.value {
+//                    AutorViewModel.saveAll(objects: [autor], clear: true)
+//                }
+                
+                self.delegate.success()
+                
+            case .failure(let error):
+                self.delegate.failure(error: error.localizedDescription)
+            }
+            
+        }
+    }
 }

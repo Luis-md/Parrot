@@ -17,4 +17,9 @@ class AmizadeRequestFactory{
         
         return Alamofire.request("\(baseUrl)/usuario", method: .get, parameters: params, headers: SessionControl.headers)
     }
+    
+    static func sendAmizade(id: Int) -> DataRequest {
+        
+        return Alamofire.request("\(baseUrl)/solicitacoes/\(id)", method: .post, headers: SessionControl.headers)
+    }
 }

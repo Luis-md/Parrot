@@ -6,6 +6,10 @@
 //  Copyright © 2019 Treinamento. All rights reserved.
 //
 
+protocol SearchTableViewDelegate {
+    func sendAmizade(id: Int)
+}
+
 import UIKit
 import Reusable
 
@@ -16,6 +20,7 @@ class SearchTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var profilePic: UIImageView!
     
     var autor: AutorView!
+    var delegate: SearchTableViewDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +32,12 @@ class SearchTableViewCell: UITableViewCell, NibReusable {
         self.user.text = autor.username
         self.email.text = autor.email
         
+        
     }
 
     @IBAction func addFriend(_ sender: Any) {
+
+        self.delegate.sendAmizade(id: autor.id)
     }
     
 }

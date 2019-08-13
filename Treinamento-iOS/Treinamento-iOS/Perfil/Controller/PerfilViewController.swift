@@ -13,7 +13,8 @@ class PerfilViewController: UIViewController {
 
     @IBOutlet weak var perfilPic: UIImageView!
     @IBOutlet weak var usernameField: UILabel!
-    @IBOutlet weak var amigosFT: UILabel!
+    @IBOutlet weak var totalAmigos: UILabel!
+    
     
     @IBOutlet weak var tableView: UITableView!
     var perfilService: PerfilService!
@@ -28,6 +29,8 @@ class PerfilViewController: UIViewController {
         self.perfilService = PerfilService(delegate: self)
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
         self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
+        
+        
        
         
         //Preciso setar esses valores para que consiga carregar as celulas..
@@ -51,6 +54,15 @@ class PerfilViewController: UIViewController {
 extension PerfilViewController : perfilDelegate {
     func success() {
         self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+        self.usernameField.text = "@\(SessionControl.user?.nome ?? "")"
+        let amigos = perfil?.autor.amigos.count
+        if(amigos == 0){
+            self.totalAmigos.text = "Sozinho no mundo"
+        } else if (amigos == 1){
+            self.totalAmigos.text = "\(amigos ?? 0) solitário"
+        } else {
+            self.totalAmigos.text = "\(amigos ?? 0) amigos"
+        }
         self.tableView.reloadData()
         SVProgressHUD.dismiss()
     }
