@@ -25,4 +25,9 @@ class PerfilRequestFactory{
         //retornando os parametros do newUser para serem enviados atraves do metodo post
         return Alamofire.request("\(baseUrl)/usuario", method: .put, parameters: updt, encoding: JSONEncoding.default, headers: SessionControl.headers)
     }
+    
+    static func logout () -> DataRequest {
+        
+        return Alamofire.request("\(baseUrl)/usuario/logout", method: .delete, headers: SessionControl.headers)
+    }
 }

@@ -60,4 +60,13 @@ class PerfilService{
         
         }
     }
+    
+    func logoutPerfil(){
+        
+        PerfilRequestFactory.logout().validate().responseObject { (response: DataResponse<Perfil>) in
+            
+            UsuarioViewModel.delete()
+            ScreenManager.setupInitialViewController()
+        }
+    }
 }

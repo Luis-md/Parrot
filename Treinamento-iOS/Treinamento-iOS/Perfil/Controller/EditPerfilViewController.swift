@@ -44,6 +44,11 @@ class EditPerfilViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        
+        perfilService.logoutPerfil()
+    }
+    
 }
 
 extension EditPerfilViewController: perfilDelegate {
