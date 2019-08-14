@@ -93,6 +93,7 @@ class AmizadeService {
                 
             case.success:
                 
+                AutorViewModel.delete(by: id)
                 self.delegate.success()
                 
             case .failure(let error):

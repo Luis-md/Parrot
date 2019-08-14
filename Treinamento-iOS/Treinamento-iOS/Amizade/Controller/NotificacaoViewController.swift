@@ -69,6 +69,5 @@ extension NotificacaoViewController : NotificacaoTableViewDelegate{
     func accept(id: Int) {
         
         self.amizadeService.aceitarAmigo(id: id)
-        
     }
 }
