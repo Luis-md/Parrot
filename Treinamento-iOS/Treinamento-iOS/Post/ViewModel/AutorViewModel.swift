@@ -74,6 +74,15 @@ class AutorViewModel{
         }
     }
     
+    static func delete(by id: Int){
+        let results = uiRealm.object(ofType: Autor.self, forPrimaryKey: id)!
+        
+        try? uiRealm.write{
+            
+            uiRealm.delete(results)
+        }
+    }
+    
     static func getAsView(autors: [Autor]) -> [AutorView] {
         
         var autorsView: [AutorView] = []

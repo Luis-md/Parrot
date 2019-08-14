@@ -87,6 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="at2-O5-oqr"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="YTj-LT-MIF" id="UVY-ZC-bYF"/>
                         <outlet property="perfilPic" destination="m4R-kN-v8E" id="hXI-H1-ttF"/>
                         <outlet property="tableView" destination="gNh-T6-NWu" id="xDH-c5-eNP"/>
                         <outlet property="totalAmigos" destination="qza-kt-kX5" id="q2k-82-77Y"/>

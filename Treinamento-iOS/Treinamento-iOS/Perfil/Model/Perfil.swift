@@ -13,11 +13,9 @@ import ObjectMapper
 
 class Perfil: Object, Mappable{
     
-
-    @objc dynamic var autor: Autor?
     var posts = List<Post>()
     var id = RealmOptional<Int>()
-
+    @objc dynamic var autor: Autor?
     
     required convenience init?(map: Map) {
         self.init()

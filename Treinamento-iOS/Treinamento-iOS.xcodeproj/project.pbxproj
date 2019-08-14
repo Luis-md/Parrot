@@ -31,6 +31,9 @@
 		8907A29222FDDB5B00BA4701 /* AmizadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */; };
 		8908E5112302055D00C6C9CB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */; };
 		8908E5122302055D00C6C9CB /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */; };
+		890AF00F23047653001A2E8A /* NotificacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890AF00E23047653001A2E8A /* NotificacaoViewController.swift */; };
+		890AF0122304769B001A2E8A /* NotificacaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890AF0102304769B001A2E8A /* NotificacaoTableViewCell.swift */; };
+		890AF0132304769B001A2E8A /* NotificacaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890AF0112304769B001A2E8A /* NotificacaoTableViewCell.xib */; };
 		896F735922FCAE1200BF8096 /* AmizadeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735822FCAE1200BF8096 /* AmizadeService.swift */; };
 		896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */; };
 		896F735D22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */; };
@@ -82,6 +85,9 @@
 		8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeViewController.swift; sourceTree = "<group>"; };
 		8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		890AF00E23047653001A2E8A /* NotificacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacaoViewController.swift; sourceTree = "<group>"; };
+		890AF0102304769B001A2E8A /* NotificacaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacaoTableViewCell.swift; sourceTree = "<group>"; };
+		890AF0112304769B001A2E8A /* NotificacaoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificacaoTableViewCell.xib; sourceTree = "<group>"; };
 		896F735822FCAE1200BF8096 /* AmizadeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeService.swift; sourceTree = "<group>"; };
 		896F735A22FCAE2900BF8096 /* AmizadeRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeRequestFactory.swift; sourceTree = "<group>"; };
 		896F735C22FCAE8D00BF8096 /* AmizadeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AmizadeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -277,6 +283,8 @@
 			children = (
 				8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */,
 				8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */,
+				890AF0102304769B001A2E8A /* NotificacaoTableViewCell.swift */,
+				890AF0112304769B001A2E8A /* NotificacaoTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			children = (
 				8907A29822FDDD1D00BA4701 /* Cell */,
 				8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */,
+				890AF00E23047653001A2E8A /* NotificacaoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890AF0132304769B001A2E8A /* NotificacaoTableViewCell.xib in Resources */,
 				F66C789322D8BC4D001B5FDA /* LaunchScreen.storyboard in Resources */,
 				F66C78A122D8BE32001B5FDA /* Colors.json in Resources */,
 				890363A522F8B797008B1034 /* Perfil.storyboard in Resources */,
@@ -579,6 +589,7 @@
 				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,
+				890AF0122304769B001A2E8A /* NotificacaoTableViewCell.swift in Sources */,
 				8901C03622FB3CAD008F9832 /* ObjectMapper.swift in Sources */,
 				890363A722F8B85E008B1034 /* PerfilService.swift in Sources */,
 				8903639E22F8A256008B1034 /* Perfil.swift in Sources */,
@@ -593,6 +604,7 @@
 				890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */,
 				836E2B4922E9D1E0002CC0B6 /* AutenticacaoService.swift in Sources */,
 				896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */,
+				890AF00F23047653001A2E8A /* NotificacaoViewController.swift in Sources */,
 				836557C922E89A1600EFE306 /* User.swift in Sources */,
 				836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class PerfilViewController: UIViewController {
 
+    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var perfilPic: UIImageView!
     @IBOutlet weak var usernameField: UILabel!
     @IBOutlet weak var totalAmigos: UILabel!
@@ -30,6 +31,7 @@ class PerfilViewController: UIViewController {
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
         self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
         
+        self.button.layer.cornerRadius = 5
         
        
         

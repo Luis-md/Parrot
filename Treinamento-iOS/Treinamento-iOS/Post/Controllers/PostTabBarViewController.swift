@@ -25,8 +25,12 @@ class PostTabBarViewController: UITabBarController {
         controllerSearch.tabBarItem.title = "Search"
         controllerSearch.tabBarItem.image = Asset.lupa.image
         
+        let controllerNotify = StoryboardScene.AmizadeStoryboard.notificacaoViewController.instantiate()
+        controllerNotify.tabBarItem.title = "Notificações"
+        controllerNotify.tabBarItem.image = Asset.bell.image
         
-        self.viewControllers = [controllerPosts, controllerSearch, controllerPerfil]
+        
+        self.viewControllers = [controllerPosts, controllerSearch, controllerNotify, controllerPerfil]
     }
 }
 
