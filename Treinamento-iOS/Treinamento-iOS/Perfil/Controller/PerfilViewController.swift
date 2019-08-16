@@ -20,17 +20,26 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var perfilService: PerfilService!
     var perfil: PerfilView?
+    var amizadeService: AmizadeService!
   
     var postagemService: PostService!
+    var perfilId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SVProgressHUD.show()
         self.perfilService = PerfilService(delegate: self)
+        self.amizadeService = AmizadeService(delegate: self)
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
-        self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
         
+        if let id = self.perfilId {
+            self.button.setTitle("Adicionar", for: .normal)
+            self.perfilService.getPerfil(id: id)
+        } else {
+        
+            self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
+        }
         self.button.layer.cornerRadius = 5
         
        
@@ -45,18 +54,26 @@ class PerfilViewController: UIViewController {
 
     @IBAction func configBtn(_ sender: Any) {
         
-        let controller = StoryboardScene.Perfil.editPerfilViewController.instantiate()
-        self.navigationController?.pushViewController(controller, animated: true)
+        if let id = self.perfilId {
+            self.amizadeService.sendFriend(id: id)
+        } else {
+            let controller = StoryboardScene.Perfil.editPerfilViewController.instantiate()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
 
 }
 
 
-extension PerfilViewController : perfilDelegate {
+extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate {
     func success() {
-        self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
-        self.usernameField.text = "@\(SessionControl.user?.nome ?? "")"
+        if let id = perfilId {
+            self.perfil = PerfilViewModel.getPerfil(id: id)
+        } else {
+            self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+        }
+        self.usernameField.text = "@\(self.perfil?.autor.username ?? "")"
         let amigos = perfil?.autor.amigos.count
         if(amigos == 0){
             self.totalAmigos.text = "Sozinho no mundo"

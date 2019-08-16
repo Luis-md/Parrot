@@ -15,6 +15,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
+    
     var postagemService: PostService!
     var posts: [PostView] = []
 
@@ -37,6 +38,7 @@ class PostViewController: UIViewController {
     @IBAction func sendPost(_ sender: Any) {
         
         postagemService.post(postMsg: postTextView.text)
+        
     }
 }
 

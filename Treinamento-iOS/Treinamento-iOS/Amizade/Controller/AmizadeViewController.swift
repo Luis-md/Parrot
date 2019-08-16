@@ -15,11 +15,13 @@ class AmizadeViewController: UIViewController {
     
     var amizadeService: AmizadeService!
     var autores: [AutorView] = []
+    var perfilService: PerfilService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
         self.amizadeService = AmizadeService(delegate: self)
+        self.perfilService = PerfilService(delegate: self)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self        
@@ -74,10 +76,22 @@ extension AmizadeViewController: UISearchBarDelegate {
 }
 
 extension AmizadeViewController : SearchTableViewDelegate{
+    func getPerfil(id: Int) {
+        print("caiu aqui")
+        let controller = StoryboardScene.Perfil.perfilViewController.instantiate()
+        controller.perfilId = id
+        self.navigationController?.pushViewController(controller, animated: true)
+        self.perfilService.getPerfil(id: id)
+    }
+    
     func sendAmizade(id: Int) {
         print("request made")
         self.amizadeService.sendFriend(id: id)
     }
     
+    
+}
+
+extension AmizadeViewController : perfilDelegate {
     
 }

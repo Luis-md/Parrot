@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,24 +22,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzt-zp-aaY">
                         <rect key="frame" x="0.0" y="0.0" width="381" height="116.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-D6-vGJ">
-                                <rect key="frame" x="112" y="18.5" width="37" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgo-dL-WWq">
-                                <rect key="frame" x="112" y="47.5" width="30" height="15"/>
+                                <rect key="frame" x="112" y="46" width="30" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-lp-Fjf">
-                                <rect key="frame" x="112" y="70.5" width="65" height="30"/>
+                                <rect key="frame" x="112" y="69" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KCg-K6-naQ"/>
-                                    <constraint firstAttribute="width" constant="65" id="Qoe-7S-vsJ"/>
+                                    <constraint firstAttribute="width" constant="80" id="Qoe-7S-vsJ"/>
                                 </constraints>
                                 <state key="normal" title="Adicionar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,27 +42,35 @@
                                     <action selector="addFriend:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cPU-jL-LRV"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ParrotLogin" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-Kb-2MG">
-                                <rect key="frame" x="13" y="18.5" width="80" height="80"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ParrotLogin" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-Kb-2MG">
+                                <rect key="frame" x="13" y="18" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="HeR-AV-OSu"/>
                                     <constraint firstAttribute="width" constant="80" id="f3K-Zy-iix"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOl-0A-4xS">
+                                <rect key="frame" x="112" y="8" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goPerfil:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="s4F-eV-cqX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NjW-D6-vGJ" firstAttribute="leading" secondItem="r6k-Kb-2MG" secondAttribute="trailing" constant="19" id="17N-b2-MVC"/>
                             <constraint firstItem="0IN-lp-Fjf" firstAttribute="top" secondItem="zgo-dL-WWq" secondAttribute="bottom" constant="8" id="5ws-d1-rbJ"/>
                             <constraint firstItem="r6k-Kb-2MG" firstAttribute="leading" secondItem="lzt-zp-aaY" secondAttribute="leading" constant="13" id="CEC-1W-Cq4"/>
-                            <constraint firstItem="zgo-dL-WWq" firstAttribute="leading" secondItem="NjW-D6-vGJ" secondAttribute="leading" id="DN2-Df-gwa"/>
-                            <constraint firstItem="r6k-Kb-2MG" firstAttribute="top" secondItem="NjW-D6-vGJ" secondAttribute="top" id="H6v-kS-xNR"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NjW-D6-vGJ" secondAttribute="trailing" constant="8" id="K9s-yl-kNF"/>
-                            <constraint firstItem="NjW-D6-vGJ" firstAttribute="top" secondItem="lzt-zp-aaY" secondAttribute="top" constant="18.5" id="L6T-jK-A1K"/>
-                            <constraint firstItem="zgo-dL-WWq" firstAttribute="top" secondItem="NjW-D6-vGJ" secondAttribute="bottom" constant="8" id="OGp-BZ-iwc"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QOl-0A-4xS" secondAttribute="trailing" constant="8" id="HJF-dL-d0h"/>
+                            <constraint firstItem="QOl-0A-4xS" firstAttribute="top" secondItem="lzt-zp-aaY" secondAttribute="top" constant="8" id="PLX-7Q-gJq"/>
+                            <constraint firstItem="QOl-0A-4xS" firstAttribute="leading" secondItem="r6k-Kb-2MG" secondAttribute="trailing" constant="19" id="RFR-7G-XAE"/>
                             <constraint firstItem="0IN-lp-Fjf" firstAttribute="leading" secondItem="zgo-dL-WWq" secondAttribute="leading" id="b5y-cX-CcI"/>
+                            <constraint firstItem="zgo-dL-WWq" firstAttribute="top" secondItem="QOl-0A-4xS" secondAttribute="bottom" constant="8" id="n1g-YS-M5s"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0IN-lp-Fjf" secondAttribute="bottom" constant="8" id="pY2-vd-PZ6"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="r6k-Kb-2MG" secondAttribute="bottom" constant="8" id="wRN-qY-UDl"/>
+                            <constraint firstItem="zgo-dL-WWq" firstAttribute="leading" secondItem="QOl-0A-4xS" secondAttribute="leading" id="xye-DO-XrN"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -82,7 +84,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="email" destination="zgo-dL-WWq" id="KZd-Fj-6EN"/>
-                <outlet property="user" destination="NjW-D6-vGJ" id="tla-uG-LEf"/>
+                <outlet property="userPerfil" destination="QOl-0A-4xS" id="ovU-We-0gf"/>
             </connections>
             <point key="canvasLocation" x="175.390625" y="115.72265624999999"/>
         </tableViewCell>

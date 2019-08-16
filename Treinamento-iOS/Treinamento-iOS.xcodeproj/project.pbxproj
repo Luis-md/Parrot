@@ -21,6 +21,7 @@
 		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
 		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
+		890142E123073E7A006521CD /* PerfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890142E023073E7A006521CD /* PerfilUserViewController.swift */; };
 		8901C03622FB3CAD008F9832 /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901C03522FB3CAD008F9832 /* ObjectMapper.swift */; };
 		8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */; };
 		8903639E22F8A256008B1034 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639D22F8A256008B1034 /* Perfil.swift */; };
@@ -75,6 +76,7 @@
 		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		890142E023073E7A006521CD /* PerfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilUserViewController.swift; sourceTree = "<group>"; };
 		8901C03522FB3CAD008F9832 /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
 		8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPerfilViewController.swift; sourceTree = "<group>"; };
 		8903639D22F8A256008B1034 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		890363A222F8B65C008B1034 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				890142E023073E7A006521CD /* PerfilUserViewController.swift */,
 				8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */,
 				89C815C322F9ED6600BFD312 /* PerfilViewController.swift */,
 			);
@@ -586,6 +589,7 @@
 				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
 				898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */,
 				F6199BA322EF6C0100B2670F /* Autor.swift in Sources */,
+				890142E123073E7A006521CD /* PerfilUserViewController.swift in Sources */,
 				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,
