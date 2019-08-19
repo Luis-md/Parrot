@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 protocol perfilDelegate {
-    func success()
+    func success(type: ResponseType)
     func failure(error: String)
 }
 
@@ -34,7 +34,7 @@ class PerfilService{
                 if let perfil = response.result.value {
                     PerfilViewModel.save(object: perfil)
                 }
-                self.delegate.success()
+                self.delegate.success(type: .getPerfil)
                 
             case .failure(let error):
                 
@@ -51,7 +51,7 @@ class PerfilService{
                 if let perfil = response.result.value {
                     PerfilViewModel.save(object: perfil)
                 }
-                self.delegate.success()
+                self.delegate.success(type: .getPerfil)
                 
             case .failure(let error):
                 

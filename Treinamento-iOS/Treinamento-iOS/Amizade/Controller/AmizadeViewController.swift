@@ -29,9 +29,6 @@ class AmizadeViewController: UIViewController {
         
         self.amizadeService.getPerfis(nome: "")
     }
-    
-
-
 }
 
 
@@ -55,7 +52,7 @@ extension AmizadeViewController : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension AmizadeViewController : AmizadeServiceDelegate {
-    func success() {
+    func success(type: ResponseType) {
         self.autores = AutorViewModel.getAutors()
         self.tableView.reloadData()
     }
@@ -93,5 +90,7 @@ extension AmizadeViewController : SearchTableViewDelegate{
 }
 
 extension AmizadeViewController : perfilDelegate {
+    
+    
     
 }

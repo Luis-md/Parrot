@@ -27,12 +27,11 @@ class ViewController: UIViewController {
     }
     @IBAction func login(_ sender: Any) {
         
-        SVProgressHUD.init()
         if let email = emailText.text,
            let password = passwordText.text,
             !email.isEmpty && !password.isEmpty {
             self.service.loginUser(email: email, password: password)
-        }
+            SVProgressHUD.show()        }
     }
  
     @IBAction func cadastrar(_ sender: Any) {

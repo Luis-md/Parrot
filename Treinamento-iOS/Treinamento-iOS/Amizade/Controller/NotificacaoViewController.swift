@@ -17,8 +17,7 @@ class NotificacaoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       self.amizadeService = AmizadeService(delegate: self)
-        
+        self.amizadeService = AmizadeService(delegate: self)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -31,17 +30,16 @@ class NotificacaoViewController: UIViewController {
 }
 
 extension NotificacaoViewController : AmizadeServiceDelegate{
-    func success() {
-        
-        self.autores = AutorViewModel.getAutors()
-        self.tableView.reloadData()
-    }
+    func success(type: ResponseType) {
+            
+            self.autores = AutorViewModel.getAutors()
+            self.tableView.reloadData()
+        }
     
     func failure(error: String) {
         
         print(error)
     }
-    
     
 }
 

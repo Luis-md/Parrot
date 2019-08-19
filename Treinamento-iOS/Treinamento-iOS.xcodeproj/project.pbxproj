@@ -21,7 +21,6 @@
 		837EF83C22EB2B1500F62825 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83B22EB2B1500F62825 /* PostViewController.swift */; };
 		837EF83F22EB3D7100F62825 /* PostRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */; };
 		837EF84122EB4A1500F62825 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837EF84022EB4A1500F62825 /* PostService.swift */; };
-		890142E123073E7A006521CD /* PerfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890142E023073E7A006521CD /* PerfilUserViewController.swift */; };
 		8901C03622FB3CAD008F9832 /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901C03522FB3CAD008F9832 /* ObjectMapper.swift */; };
 		8903639C22F89B7A008B1034 /* EditPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */; };
 		8903639E22F8A256008B1034 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903639D22F8A256008B1034 /* Perfil.swift */; };
@@ -29,6 +28,7 @@
 		890363A722F8B85E008B1034 /* PerfilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A622F8B85E008B1034 /* PerfilService.swift */; };
 		890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A822F8B877008B1034 /* PerfilRequestFactory.swift */; };
 		890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363AA22F8BF64008B1034 /* PerfilViewModel.swift */; };
+		89049117230B13F8001EC343 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89049116230B13F8001EC343 /* ResponseType.swift */; };
 		8907A29222FDDB5B00BA4701 /* AmizadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */; };
 		8908E5112302055D00C6C9CB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */; };
 		8908E5122302055D00C6C9CB /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */; };
@@ -76,7 +76,6 @@
 		837EF83B22EB2B1500F62825 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		837EF83E22EB3D7100F62825 /* PostRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestFactory.swift; sourceTree = "<group>"; };
 		837EF84022EB4A1500F62825 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		890142E023073E7A006521CD /* PerfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilUserViewController.swift; sourceTree = "<group>"; };
 		8901C03522FB3CAD008F9832 /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
 		8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPerfilViewController.swift; sourceTree = "<group>"; };
 		8903639D22F8A256008B1034 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		890363A622F8B85E008B1034 /* PerfilService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilService.swift; sourceTree = "<group>"; };
 		890363A822F8B877008B1034 /* PerfilRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilRequestFactory.swift; sourceTree = "<group>"; };
 		890363AA22F8BF64008B1034 /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
+		89049116230B13F8001EC343 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeViewController.swift; sourceTree = "<group>"; };
 		8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -266,7 +266,6 @@
 		890363A222F8B65C008B1034 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				890142E023073E7A006521CD /* PerfilUserViewController.swift */,
 				8903639B22F89B7A008B1034 /* EditPerfilViewController.swift */,
 				89C815C322F9ED6600BFD312 /* PerfilViewController.swift */,
 			);
@@ -396,6 +395,7 @@
 				836E2B5022E9E120002CC0B6 /* SessionControl.swift */,
 				836E2B5422E9F11D002CC0B6 /* ScreenManager.swift */,
 				8901C03522FB3CAD008F9832 /* ObjectMapper.swift */,
+				89049116230B13F8001EC343 /* ResponseType.swift */,
 				F66C789B22D8BDA4001B5FDA /* Supporting Files */,
 			);
 			path = Application;
@@ -586,10 +586,10 @@
 				836E2B5122E9E120002CC0B6 /* SessionControl.swift in Sources */,
 				89F7DC3D22F4B1A0002878D2 /* EditViewController.swift in Sources */,
 				836E2B5322E9E8C3002CC0B6 /* CadastroViewController.swift in Sources */,
+				89049117230B13F8001EC343 /* ResponseType.swift in Sources */,
 				837EF84122EB4A1500F62825 /* PostService.swift in Sources */,
 				898F514B22F0C53C0099674B /* PostTabBarViewController.swift in Sources */,
 				F6199BA322EF6C0100B2670F /* Autor.swift in Sources */,
-				890142E123073E7A006521CD /* PerfilUserViewController.swift in Sources */,
 				898F515122F0CA7D0099674B /* SearchViewController.swift in Sources */,
 				F66C788922D8BC45001B5FDA /* AppDelegate.swift in Sources */,
 				898F515522F0E2B70099674B /* PostTableViewCell.swift in Sources */,

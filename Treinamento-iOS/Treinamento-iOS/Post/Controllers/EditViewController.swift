@@ -45,7 +45,7 @@ class EditViewController: UIViewController {
 }
 
 extension EditViewController : PostServiceDelegate {
-    func success() {
+    func success(type: ResponseType) {
         self.delegate.edit(id: post.id)
         self.navigationController?.popViewController(animated: true)
     }

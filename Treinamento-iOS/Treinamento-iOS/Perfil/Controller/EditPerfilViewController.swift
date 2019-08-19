@@ -52,8 +52,7 @@ class EditPerfilViewController: UIViewController {
 }
 
 extension EditPerfilViewController: perfilDelegate {
-    func success() {
-        
+    func success(type: ResponseType) {
         self.navigationController?.popViewController(animated: true)
     }
     

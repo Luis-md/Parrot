@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 protocol PostServiceDelegate {
-    func success()
+    func success(type: ResponseType)
     func failure(error: String)
 }
 
@@ -33,7 +33,7 @@ class PostService {
                 if let postMsg = response.result.value {
                     PostViewModel.saveAll(objects: [postMsg])
                 }
-                self.delegate.success()
+                self.delegate.success(type: .post)
                 
             case .failure(let error):
                 
@@ -53,7 +53,7 @@ class PostService {
                     PostViewModel.saveAll(objects: posts, clear: true)
                 }
                 
-                self.delegate.success()
+                self.delegate.success(type: .getPosts)
                 
             case .failure(let error):
                 
@@ -72,7 +72,7 @@ class PostService {
                 if let post = response.result.value {
                     PostViewModel.saveAll(objects: [post])
                 }
-                self.delegate.success()
+                self.delegate.success(type: .sendLike)
                 
             case .failure(let error):
                 
@@ -91,7 +91,7 @@ class PostService {
                // isso irá deletar a postagem do armazenamento local
                     PostViewModel.delPost(id: id)
                 //}
-                self.delegate.success()
+                self.delegate.success(type: .delPost)
                 
             case .failure(let error):
                 
@@ -112,7 +112,7 @@ class PostService {
                 if let post = response.result.value {
                     PostViewModel.saveAll(objects: [post])
                 }
-                self.delegate.success()
+                self.delegate.success(type: .editPost)
                 
             case .failure(let error):
                 

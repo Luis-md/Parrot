@@ -44,17 +44,14 @@ class PostViewController: UIViewController {
 
 
 extension PostViewController: PostServiceDelegate {
-    func success() {
-        
+    func success(type: ResponseType) {
         self.posts = PostViewModel.getPosts()
         self.tableView.reloadData()
-        //print(posts.count)
     }
     
     func failure(error: String) {
         
         print(error)
-        
     }
 }
 
@@ -88,6 +85,7 @@ extension PostViewController : PostTableViewCellDelegate {
         
         let optionMenu = UIAlertController(title: "O que deseja?", message: "", preferredStyle: .actionSheet)
         
+        //utilizar as strings de titulo em localizable 
         let deleteAction = UIAlertAction(title: "Deletar post", style: .default) { (UIAlertAction) in
             self.postagemService.delPost(id: id)
 

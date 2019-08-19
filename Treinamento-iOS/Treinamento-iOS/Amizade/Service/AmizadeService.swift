@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 protocol AmizadeServiceDelegate {
-    func success()
+    func success(type: ResponseType)
     func failure(error: String)
 }
 
@@ -35,7 +35,7 @@ class AmizadeService {
                     AutorViewModel.saveAll(objects: autor, clear: true)
                 }
                 
-                self.delegate.success()
+                self.delegate.success(type: .getPerfis)
                 
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)
@@ -56,7 +56,7 @@ class AmizadeService {
 //                    AutorViewModel.saveAll(objects: [autor], clear: true)
 //                }
                 
-                self.delegate.success()
+                self.delegate.success(type: .sendFriend)
                 
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)
@@ -77,7 +77,7 @@ class AmizadeService {
                     AutorViewModel.saveAll(objects: autor, clear: true)
                 }
                 
-                self.delegate.success()
+                self.delegate.success(type: .getSolicitacoes)
                 
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)
@@ -94,7 +94,7 @@ class AmizadeService {
             case.success:
                 
                 AutorViewModel.delete(by: id)
-                self.delegate.success()
+                self.delegate.success(type: .aceitarAmigo)
                 
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)

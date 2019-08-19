@@ -21,7 +21,9 @@ class PerfilViewController: UIViewController {
     var perfilService: PerfilService!
     var perfil: PerfilView?
     var amizadeService: AmizadeService!
-  
+    
+    var posts: [PostView] = []
+    
     var postagemService: PostService!
     var perfilId: Int?
     
@@ -31,9 +33,11 @@ class PerfilViewController: UIViewController {
         SVProgressHUD.show()
         self.perfilService = PerfilService(delegate: self)
         self.amizadeService = AmizadeService(delegate: self)
+        self.postagemService = PostService(delegate: self)
+        
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
         
-        if let id = self.perfilId {
+        if let id = self.perfilId, let userId = SessionControl.user?.id.value, userId != id {
             self.button.setTitle("Adicionar", for: .normal)
             self.perfilService.getPerfil(id: id)
         } else {
@@ -49,12 +53,13 @@ class PerfilViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
-    
+        
+        self.postagemService.getPosts()
     }
 
     @IBAction func configBtn(_ sender: Any) {
         
-        if let id = self.perfilId {
+        if let id = self.perfilId, let userId = SessionControl.user?.id.value, userId != id {
             self.amizadeService.sendFriend(id: id)
         } else {
             let controller = StoryboardScene.Perfil.editPerfilViewController.instantiate()
@@ -66,28 +71,42 @@ class PerfilViewController: UIViewController {
 }
 
 
-extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate {
-    func success() {
-        if let id = perfilId {
-            self.perfil = PerfilViewModel.getPerfil(id: id)
-        } else {
-            self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
-        }
-        self.usernameField.text = "@\(self.perfil?.autor.username ?? "")"
-        let amigos = perfil?.autor.amigos.count
-        if(amigos == 0){
-            self.totalAmigos.text = "Sozinho no mundo"
-        } else if (amigos == 1){
-            self.totalAmigos.text = "\(amigos ?? 0) solitário"
-        } else {
-            self.totalAmigos.text = "\(amigos ?? 0) amigos"
-        }
-        self.tableView.reloadData()
-        SVProgressHUD.dismiss()
-    }
-    
+extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate, PostServiceDelegate {
     func failure(error: String) {
         print(error)
+    }
+
+    func success(type: ResponseType) {
+        
+        switch type {
+        case .getPerfil:
+            if let id = perfilId, let userId = SessionControl.user?.id.value, userId != id {
+                self.perfil = PerfilViewModel.getPerfil(id: id)
+            } else {
+                self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+            }
+            self.usernameField.text = "@\(self.perfil?.autor.username ?? "")"
+            let amigos = perfil?.autor.amigos.count
+            if(amigos == 0){
+                self.totalAmigos.text = "Sozinho no mundo"
+            } else if (amigos == 1){
+                self.totalAmigos.text = "\(amigos ?? 0) solitário"
+            } else {
+                self.totalAmigos.text = "\(amigos ?? 0) amigos"
+            }
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+            
+            
+        case .sendLike:
+            
+            self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+            self.tableView.reloadData()
+
+            
+        default:
+            break
+        }
     }
 }
 
@@ -113,10 +132,45 @@ extension PerfilViewController : UITableViewDataSource, UITableViewDelegate {
 
 extension PerfilViewController : PostTableViewCellDelegate {
     func curtido(id: Int, curtido: Bool) {
+        print("botao apertado")
         self.postagemService.sendLike(id: id, curtido: curtido)
     }
     
     func optionPost(id: Int) {
+            let optionMenu = UIAlertController(title: "O que deseja?", message: "", preferredStyle: .actionSheet)
+            
+            //utilizar as strings de titulo em localizable
+            let deleteAction = UIAlertAction(title: "Deletar post", style: .default) { (UIAlertAction) in
+                self.postagemService.delPost(id: id)
+                
+            }
+            
+            let editAction = UIAlertAction(title: "Editar post", style: .default) { (UIAlertAction) in
+                
+                let controller = StoryboardScene.PostStoryboard.editViewController.instantiate()
+                controller.id = id
+                controller.delegate = self
+                self.navigationController?.pushViewController(controller, animated: true)
+                
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+                
+            }
+            
+            optionMenu.addAction(deleteAction)
+            optionMenu.addAction(editAction)
+            optionMenu.addAction(cancelAction)
+            
+            self.present(optionMenu, animated: true)
+    }
         
+}
+
+extension PerfilViewController : EditViewControllerDelegate{
+    func edit(id: Int) {
+        
+        self.posts = PostViewModel.getPosts()
+        self.tableView.reloadData()
     }
 }
