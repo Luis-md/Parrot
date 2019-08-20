@@ -24,6 +24,8 @@ class PostTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var like: UIButton!
     @IBOutlet weak var timeText: UILabel!
+    @IBOutlet weak var optionBtn: UIButton!
+    
     
     var delegate: PostTableViewCellDelegate!
     var post: PostView!

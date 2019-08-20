@@ -53,8 +53,6 @@ class PerfilViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
-        
-        self.postagemService.getPosts()
     }
 
     @IBAction func configBtn(_ sender: Any) {
@@ -98,10 +96,17 @@ extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate, PostSer
             SVProgressHUD.dismiss()
             
             
-        case .sendLike:
+        case .sendLike(let id):
             
-            self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
-            self.tableView.reloadData()
+            if let id = self.perfilId {
+                self.perfil = PerfilViewModel.getPerfil(id: id)
+            } else {
+                self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+            }
+            
+            if let index = self.perfil?.posts.firstIndex(where: {$0.id == id}) {
+                self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
+            }
 
             
         default:
@@ -122,6 +127,12 @@ extension PerfilViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath) as PostTableViewCell
         cell.delegate = self
         cell.bind(post: self.perfil!.posts[indexPath.row])
+        
+        if let id = perfilId, let userId = SessionControl.user?.id.value, userId != id {
+            cell.optionBtn.isHidden = true
+        } else {
+            cell.optionBtn.isHidden = false
+        }
         return cell
     }
     

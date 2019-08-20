@@ -12,7 +12,7 @@ enum ResponseType {
     case post
     case getPost
     case getPosts
-    case sendLike
+    case sendLike(postId: Int)
     case delPost
     case editPost
     

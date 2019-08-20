@@ -9,6 +9,14 @@ import Foundation
 internal enum L10n {
 
   internal enum Common {
+    /// Cancelar
+    internal static let cancel = L10n.tr("Localizable", "common.cancel")
+    /// Deletar post
+    internal static let delPost = L10n.tr("Localizable", "common.delPost")
+    /// O que deseja?
+    internal static let deseja = L10n.tr("Localizable", "common.deseja")
+    /// Editar post
+    internal static let edtPost = L10n.tr("Localizable", "common.edtPost")
     /// Ok
     internal static let ok = L10n.tr("Localizable", "common.ok")
   }

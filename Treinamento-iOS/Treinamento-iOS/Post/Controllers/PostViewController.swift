@@ -45,8 +45,19 @@ class PostViewController: UIViewController {
 
 extension PostViewController: PostServiceDelegate {
     func success(type: ResponseType) {
-        self.posts = PostViewModel.getPosts()
-        self.tableView.reloadData()
+        
+        switch type {
+        case .sendLike(let id):
+            self.posts = PostViewModel.getPosts()
+            if let index = self.posts.firstIndex(where: {$0.id == id}) {
+                self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
+            }
+            
+            
+        default:
+            self.posts = PostViewModel.getPosts()
+            self.tableView.reloadData()
+        }
     }
     
     func failure(error: String) {
@@ -83,15 +94,15 @@ extension PostViewController : PostTableViewCellDelegate {
     
     func optionPost(id: Int) {
         
-        let optionMenu = UIAlertController(title: "O que deseja?", message: "", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: L10n.Common.deseja, message: "", preferredStyle: .actionSheet)
         
         //utilizar as strings de titulo em localizable 
-        let deleteAction = UIAlertAction(title: "Deletar post", style: .default) { (UIAlertAction) in
+        let deleteAction = UIAlertAction(title: L10n.Common.delPost, style: .default) { (UIAlertAction) in
             self.postagemService.delPost(id: id)
 
         }
         
-        let editAction = UIAlertAction(title: "Editar post", style: .default) { (UIAlertAction) in
+        let editAction = UIAlertAction(title: L10n.Common.edtPost, style: .default) { (UIAlertAction) in
             
             let controller = StoryboardScene.PostStoryboard.editViewController.instantiate()
             controller.id = id
@@ -100,7 +111,7 @@ extension PostViewController : PostTableViewCellDelegate {
             
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
+        let cancelAction = UIAlertAction(title: L10n.Common.cancel, style: .cancel) { (UIAlertAction) in
             
         }
         

@@ -117,6 +117,7 @@
                 <outlet property="imagePost" destination="rfg-tX-he7" id="iQg-1g-VbJ"/>
                 <outlet property="like" destination="Yzb-bc-GSb" id="5VL-ca-aOd"/>
                 <outlet property="likeCount" destination="zxq-Yb-5mu" id="qUo-lh-MFa"/>
+                <outlet property="optionBtn" destination="a6G-Sd-VkD" id="KCj-0z-h0J"/>
                 <outlet property="postText" destination="MNq-O5-rwx" id="ZPN-Yy-fJ0"/>
                 <outlet property="profilePic" destination="wM8-Zu-ToB" id="NMM-Kr-Aly"/>
                 <outlet property="timeText" destination="R98-rH-4xg" id="oGl-t1-JGL"/>

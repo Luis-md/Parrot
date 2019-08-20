@@ -1,2 +1,6 @@
 
 "common.ok" = "Ok";
+"common.deseja" = "O que deseja?";
+"common.delPost" = "Deletar post";
+"common.edtPost" = "Editar post";
+"common.cancel"= "Cancelar";

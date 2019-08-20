@@ -72,7 +72,7 @@ class PostService {
                 if let post = response.result.value {
                     PostViewModel.saveAll(objects: [post])
                 }
-                self.delegate.success(type: .sendLike)
+                self.delegate.success(type: .sendLike(postId: id))
                 
             case .failure(let error):
                 
