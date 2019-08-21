@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class PostViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
+    var imagePicker = UIImagePickerController()
+    var imageImported: UIImageView?
     
     var postagemService: PostService!
     var posts: [PostView] = []
@@ -31,9 +34,27 @@ class PostViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
-             
+        
+        self.imagePicker.delegate = self
+        
         self.postagemService.getPosts()
     }
+    @IBAction func imagePick(_ sender: Any) {
+        
+        self.imagePicker.sourceType = .photoLibrary
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            if status == .authorized {
+                self.present(self.imagePicker, animated: true, completion: nil)
+            } else {
+                print("AA")
+            }
+        }
+    }
+    
+
+    
+    
     
     @IBAction func sendPost(_ sender: Any) {
         
@@ -127,5 +148,21 @@ extension PostViewController : EditViewControllerDelegate {
     func edit(id: Int) {
         self.posts = PostViewModel.getPosts()
         self.tableView.reloadData()
+    }
+}
+
+
+extension PostViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imageImported?.image = image
+            
+        } else {
+            print("aabbn")
+        }
+        
     }
 }
