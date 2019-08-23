@@ -18,7 +18,8 @@ class PostViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     var imageImported: UIImageView?
-    var imageDetail: [String : Any] = [:]
+    var imageDetail: [String : String] = [:]
+    var data: Data?
     
     var postagemService: PostService!
     var posts: [PostView] = []
@@ -65,7 +66,12 @@ class PostViewController: UIViewController {
     
     @IBAction func sendPost(_ sender: Any) {
         
-        postagemService.post(postMsg: postTextView.text)
+        
+        if let data = self.data {
+            self.postagemService.sendAnexo(mimeType: imageDetail["mimeType"] ?? "", extensao: imageDetail["mimeTypeExtension"] ?? "", fileName: imageDetail["fileName"] ?? "", data: data, postMsg: postTextView.text)
+        } else {
+            postagemService.post(postMsg: postTextView.text)
+        }
         
     }
 }
@@ -196,11 +202,11 @@ extension PostViewController : UINavigationControllerDelegate, UIImagePickerCont
         // MARK: Photo
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            let data = UIImageJPEGRepresentation(image, 0.25)!
+            self.data = UIImageJPEGRepresentation(image, 0.25)!
             
-            self.postagemService.sendAnexo(mimeType: mimeType, extensao: mimeTypeExtension, fileName: fileName, data: data)
+//            self.postagemService.sendAnexo(mimeType: mimeType, extensao: mimeTypeExtension, fileName: fileName, data: data)
             
-            self.imageDetail = ["data" : data,
+            self.imageDetail = ["fileName" : fileName,
                                 "mimeTypeExtension" : mimeTypeExtension,
                                 "mimeType" : mimeType]
         }

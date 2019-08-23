@@ -121,9 +121,23 @@ class PostService {
         }
     }
     
-    func sendAnexo(mimeType: String, extensao: String, fileName: String, data: Data){
+    func sendAnexo(mimeType: String, extensao: String, fileName: String, data: Data, postMsg: String){
         
-        
+        PostRequestFactory.sendPost(postMsg: postMsg).validate().responseObject { (response: DataResponse<Post>) in
+            
+            switch response.result {
+            case .success:
+                
+                if let postMsg = response.result.value {
+                    PostViewModel.saveAll(objects: [postMsg])
+                }
+                self.delegate.success(type: .post)
+                
+            case .failure(let error):
+                
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
     }
 }
 
