@@ -120,5 +120,10 @@ class PostService {
             }
         }
     }
+    
+    func sendAnexo(mimeType: String, extensao: String, fileName: String, data: Data){
+        
+        
+    }
 }
 

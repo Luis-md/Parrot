@@ -18,6 +18,7 @@ class PostViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     var imageImported: UIImageView?
+    var imageDetail: [String : Any] = [:]
     
     var postagemService: PostService!
     var posts: [PostView] = []
@@ -41,16 +42,22 @@ class PostViewController: UIViewController {
     }
     @IBAction func imagePick(_ sender: Any) {
         
+        
+        self.imagePicker.delegate = self
         self.imagePicker.sourceType = .photoLibrary
         
         PHPhotoLibrary.requestAuthorization { (status) in
             if status == .authorized {
-                self.present(self.imagePicker, animated: true, completion: nil)
+                if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                    
+                    self.present(self.imagePicker, animated: true)
+                }
             } else {
                 print("AA")
             }
         }
     }
+    
     
 
     
@@ -153,9 +160,55 @@ extension PostViewController : EditViewControllerDelegate {
 
 
 extension PostViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func getFileName(info: [String : Any]) -> String {
+        
+        if let imageURL = info[UIImagePickerControllerReferenceURL] as? URL {
+            
+            let result = PHAsset.fetchAssets(withALAssetURLs: [imageURL], options: nil)
+            
+            let asset = result.firstObject
+            
+            let fileName = asset?.value(forKey: "filename")
+            
+            if let fileString = fileName as? String {
+                
+                let fileUrl = URL(string: fileString)
+                
+                if let name = fileUrl?.lastPathComponent {
+                    
+                    return name
+                }
+            }
+        }
+        
+        return "asset.JPG"
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        var error: String?
+        
+        let fileName = self.getFileName(info: info)
+        let mimeTypeExtension = PostViewModel.lastPathExtension(fileName: fileName)
+        let mimeType: String = PostViewModel.mimeTypeFromFileExtension(fileExtension: mimeTypeExtension)!
+        
+        // MARK: Photo
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            let data = UIImageJPEGRepresentation(image, 0.25)!
+            
+            self.postagemService.sendAnexo(mimeType: mimeType, extensao: mimeTypeExtension, fileName: fileName, data: data)
+            
+            self.imageDetail = ["data" : data,
+                                "mimeTypeExtension" : mimeTypeExtension,
+                                "mimeType" : mimeType]
+        }
         self.dismiss(animated: true, completion: nil)
+    }
+}
+        
+/*        self.dismiss(animated: true, completion: nil)
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imageImported?.image = image
@@ -165,4 +218,4 @@ extension PostViewController : UINavigationControllerDelegate, UIImagePickerCont
         }
         
     }
-}
+}*/

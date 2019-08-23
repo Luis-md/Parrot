@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import MobileCoreServices
 
 struct PostView {
     
@@ -133,4 +134,24 @@ class PostViewModel {
         }
     }
     
+    static func lastPathExtension(fileName: String) -> String {
+        
+        let arrayFileName = fileName.components(separatedBy: ".")
+        let mimeTypeExtension = arrayFileName[(arrayFileName.count - 1)]
+        
+        return mimeTypeExtension
+    }
+    
+    static func mimeTypeFromFileExtension(fileExtension: String) -> String? {
+        
+        guard let uti: CFString = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as NSString, nil)?.takeRetainedValue() else {
+            return nil
+        }
+        
+        guard let mimeType: CFString = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() else {
+            return "application/octet-stream"
+        }
+        
+        return mimeType as String
+    }
 }
