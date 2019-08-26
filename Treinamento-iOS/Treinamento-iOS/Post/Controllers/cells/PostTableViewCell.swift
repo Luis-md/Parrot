@@ -8,7 +8,7 @@
 
 import UIKit
 import Reusable //facilita para a gente poder colocar a celula na Table View
-
+import Kingfisher
 
 protocol PostTableViewCellDelegate {
     
@@ -49,6 +49,8 @@ class PostTableViewCell: UITableViewCell, NibReusable {
         } else {
             self.like.tintColor = .red
         }
+        
+       self.imagePost.kf.setImage(with: post.urlImg)
     }
     
     @IBAction func likeButton(_ sender: Any) {

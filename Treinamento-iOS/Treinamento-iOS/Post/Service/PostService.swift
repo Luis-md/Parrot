@@ -121,23 +121,33 @@ class PostService {
         }
     }
     
-    func sendAnexo(mimeType: String, extensao: String, fileName: String, data: Data, postMsg: String){
+    func sendAnexo(mimeType: String, extensao: String, fileName: String, data: Data, postMsg: String) {
         
-        PostRequestFactory.sendPost(postMsg: postMsg).validate().responseObject { (response: DataResponse<Post>) in
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
             
-            switch response.result {
-            case .success:
-                
-                if let postMsg = response.result.value {
-                    PostViewModel.saveAll(objects: [postMsg])
-                }
-                self.delegate.success(type: .post)
-                
+            multipartFormData.append(data, withName: "imagem", fileName: "image.jpg", mimeType: "image/jpg")
+            multipartFormData.append(postMsg.data(using: String.Encoding.utf8)!, withName: "mensagem")
+            
+        }, usingThreshold: UInt64(), to: baseUrl + "/postagem", method: .post, headers: SessionControl.headers) { (result) in
+            
+            
+            switch result{
+            case .success(let upload, _, _):
+                print("SUCESSO CARAI")
+//                upload.responseJSON { response in
+//                    print("Succesfully uploaded")
+//                    if let err = response.error{
+//                        onError?(err)
+//                        return
+//                    }
+//                    onCompletion?(nil)
+//                }
             case .failure(let error):
-                
                 self.delegate.failure(error: error.localizedDescription)
             }
         }
+    
     }
 }
 

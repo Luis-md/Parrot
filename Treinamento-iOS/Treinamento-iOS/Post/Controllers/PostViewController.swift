@@ -203,7 +203,6 @@ extension PostViewController : UINavigationControllerDelegate, UIImagePickerCont
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             self.data = UIImageJPEGRepresentation(image, 0.25)!
-            
 //            self.postagemService.sendAnexo(mimeType: mimeType, extensao: mimeTypeExtension, fileName: fileName, data: data)
             
             self.imageDetail = ["fileName" : fileName,

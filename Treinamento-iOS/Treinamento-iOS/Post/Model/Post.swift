@@ -19,6 +19,7 @@ class Post: Object, Mappable{
     var criado_em = RealmOptional<Int>()
     @objc dynamic var autor: Autor?
     var curtido = RealmOptional<Bool>()
+    @objc dynamic var postPic: String?
     
     required convenience init?(map: Map) {
         
@@ -37,6 +38,7 @@ class Post: Object, Mappable{
         self.curtidas.value         <- map["curtidas"]
         self.criado_em.value        <- map["criado_em"]
         self.curtido.value          <- map["curtido"]
+        self.postPic                <- map["imagem"]
     }
 }
 

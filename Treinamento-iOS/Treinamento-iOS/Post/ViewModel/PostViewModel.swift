@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import MobileCoreServices
+import Kingfisher
 
 struct PostView {
     
@@ -18,6 +19,8 @@ struct PostView {
     var criado_em = Date(timeIntervalSince1970: 0)
     var autor = AutorView()
     var curtido = false
+    var postImg = ""
+    
     
     var dateString: String {
         
@@ -26,6 +29,11 @@ struct PostView {
         dateFormatter.dateFormat = "dd MMM yyyy"
         
         return dateFormatter.string(from: self.criado_em)
+    }
+    
+    var urlImg: URL? {
+
+        return URL(string: baseUrl + self.postImg)
     }
 }
 
@@ -57,6 +65,8 @@ class PostViewModel {
         postView.criado_em = Date(timeIntervalSince1970: TimeInterval(post.criado_em.value ?? 0)) 
         postView.autor = AutorViewModel.getAsView(autor: post.autor)
         postView.curtido = post.curtido.value ?? false
+        postView.postImg = post.postPic ?? ""
+        
         
         return postView
     }
@@ -113,6 +123,8 @@ class PostViewModel {
 //      post.criado_em.value = postView.criado_em
         post.autor = AutorViewModel.getAsModel(autorView: postView.autor)
         post.curtido.value = postView.curtido
+        post.postPic = postView.postImg
+
         
         return post
     }
