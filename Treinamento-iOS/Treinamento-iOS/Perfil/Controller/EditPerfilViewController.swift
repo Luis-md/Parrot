@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol EditPerfilDelegate {
     func updtProfile(name: String, password: String)
@@ -30,6 +31,8 @@ class EditPerfilViewController: UIViewController {
         
         perfilService = PerfilService(delegate: self)
         self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
+        self.profilePic.kf.setImage(with: self.perfil?.autor.urlImg)
+
 
        /* self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .done, target: self, action: #selector(method(for:)))*/
     }

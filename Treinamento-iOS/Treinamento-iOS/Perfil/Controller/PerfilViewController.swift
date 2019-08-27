@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import Kingfisher
 
 class PerfilViewController: UIViewController {
 
@@ -84,6 +85,7 @@ extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate, PostSer
                 self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
             }
             self.usernameField.text = "@\(self.perfil?.autor.username ?? "")"
+            self.perfilPic.kf.setImage(with: self.perfil?.autor.urlImg)
             let amigos = perfil?.autor.amigos.count
             if(amigos == 0){
                 self.totalAmigos.text = "Sozinho no mundo"

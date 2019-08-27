@@ -50,6 +50,7 @@ class PostTableViewCell: UITableViewCell, NibReusable {
             self.like.tintColor = .red
         }
         
+       self.profilePic.kf.setImage(with: post.autor.urlImg)
        self.imagePost.kf.setImage(with: post.urlImg)
     }
     

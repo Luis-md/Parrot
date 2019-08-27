@@ -13,7 +13,13 @@ import RealmSwift
 struct UsuarioView {
     
     var userName = ""
+    var perfilPic = ""
     
+    var urlImg: URL? {
+        
+        return URL(string: baseUrl + self.perfilPic)
+    }
+
 }
 
 

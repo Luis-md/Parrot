@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CadastroViewController: UIViewController {
     
     @IBOutlet weak var fullName: UITextField!
@@ -20,13 +21,29 @@ class CadastroViewController: UIViewController {
         super.viewDidLoad()
 
         
-        self.service = AutenticacaoService.init(delegate: self)
+       // self.service = AutenticacaoService.init(delegate: self)
     }
 
     @IBAction func cadastrar(_ sender: Any) {
         
+        let controller = StoryboardScene.Main.concluirCadastroViewController.instantiate()
         
-        if let fullname = fullName.text,
+        if let fullName = fullName.text,
+            let userName = userName.text,
+            let email = email.text,
+            let password = password.text,
+            !fullName.isEmpty && !userName.isEmpty && !email.isEmpty && !password.isEmpty {
+            
+            controller.fullName = fullName
+            controller.userName = userName
+            controller.email = email
+            controller.password = password
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        
+        /*if let fullname = fullName.text,
            let username = userName.text,
            let email = email.text,
            let password = password.text,
@@ -34,10 +51,10 @@ class CadastroViewController: UIViewController {
             
             self.service.cadastroUser(nome: fullname, username: username, email: email, password: password)
         }
-    }
+    }*/
 }
 
-extension CadastroViewController: AutenticacaoServiceDelegate {
+/*extension CadastroViewController: AutenticacaoServiceDelegate {
     func success() {
         
         self.navigationController?.popViewController(animated: true)
@@ -48,7 +65,7 @@ extension CadastroViewController: AutenticacaoServiceDelegate {
     func failure(error: String) {
         
         print(error)
-    }
+    }*/
     
     
 }

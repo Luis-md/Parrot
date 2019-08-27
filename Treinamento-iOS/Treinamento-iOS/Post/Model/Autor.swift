@@ -18,7 +18,7 @@ class Autor: Object, Mappable {
     @objc dynamic var nome: String?
     @objc dynamic var email: String?
     @objc dynamic var username: String?
-    //@objc dynamic var foto: String?
+    @objc dynamic var foto: String?
     @objc dynamic var token: String?
     var amigos = List<Autor>()
     
@@ -40,7 +40,7 @@ class Autor: Object, Mappable {
         self.email          <- map["email"]
         self.username       <- map["username"]
         self.amigos         <- (map["amigos"], ListTransform<Autor>())
-        //     self.foto           <- map["foto"]
+        self.foto           <- map["foto"]
         
     }
     

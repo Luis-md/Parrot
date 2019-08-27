@@ -50,9 +50,9 @@ class AutenticacaoService {
                         }
                     }
                 
-                self.delegate.success()
+                    self.delegate.success()
                 case .failure(let error):
-                self.delegate.failure(error: error.localizedDescription)
+                    self.delegate.failure(error: error.localizedDescription)
             }
         }
     }
@@ -73,6 +73,7 @@ class AutenticacaoService {
                     if let token = response.response?.allHeaderFields["token"] as? String {
                         user.token = token
                         print("Login ok!")
+                        UsuarioViewModel.delete()
                         UsuarioViewModel.save(object: user)
                         SessionControl.setHeaders()
                     }
@@ -80,12 +81,47 @@ class AutenticacaoService {
                 
                 self.delegate.success()
                 
-                case .failure(let error):
+            case .failure(let error):
                 
                 self.delegate.failure(error: error.localizedDescription)
             }
             
             
+        }
+    }
+    
+    func cadastroPic(mimeType: String, extensao: String, fileName: String, data: Data, userName: String, password: String, fullName: String, email: String) {
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            multipartFormData.append(data, withName: "foto", fileName: "image.jpg", mimeType: "image/jpg")
+            multipartFormData.append(fullName.data(using: String.Encoding.utf8)!, withName: "nome")
+            multipartFormData.append(userName.data(using: String.Encoding.utf8)!, withName: "username")
+            multipartFormData.append(email.data(using: String.Encoding.utf8)!, withName: "email")
+            multipartFormData.append(password.data(using: String.Encoding.utf8)!, withName: "password")
+            
+        }, usingThreshold: UInt64(), to: baseUrl + "/usuario", method: .post, headers: SessionControl.headers) { (result) in
+            
+            
+            switch result{
+            case .success(let upload, _, _):
+                
+                upload.responseObject(completionHandler: { (response: DataResponse<User>) in
+                    
+                    if let user = response.result.value {
+                        if let token = response.response?.allHeaderFields["token"] as? String {
+                            user.token = token
+                            
+                            UsuarioViewModel.save(object: user)
+                            SessionControl.setHeaders()
+                        }
+                    }
+                })
+                print("Cadastrou!!")
+                self.delegate.success()
+            case .failure(let error):
+                self.delegate.failure(error: error.localizedDescription)
+            }
         }
     }
 }

@@ -135,14 +135,7 @@ class PostService {
             switch result{
             case .success(let upload, _, _):
                 print("SUCESSO CARAI")
-//                upload.responseJSON { response in
-//                    print("Succesfully uploaded")
-//                    if let err = response.error{
-//                        onError?(err)
-//                        return
-//                    }
-//                    onCompletion?(nil)
-//                }
+
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)
             }

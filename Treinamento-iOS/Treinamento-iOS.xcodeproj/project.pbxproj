@@ -29,6 +29,7 @@
 		890363A922F8B877008B1034 /* PerfilRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363A822F8B877008B1034 /* PerfilRequestFactory.swift */; };
 		890363AB22F8BF64008B1034 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890363AA22F8BF64008B1034 /* PerfilViewModel.swift */; };
 		89049117230B13F8001EC343 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89049116230B13F8001EC343 /* ResponseType.swift */; };
+		89075EB5231598A20066EB12 /* ConcluirCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89075EB4231598A20066EB12 /* ConcluirCadastroViewController.swift */; };
 		8907A29222FDDB5B00BA4701 /* AmizadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */; };
 		8908E5112302055D00C6C9CB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */; };
 		8908E5122302055D00C6C9CB /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */; };
@@ -84,6 +85,7 @@
 		890363A822F8B877008B1034 /* PerfilRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilRequestFactory.swift; sourceTree = "<group>"; };
 		890363AA22F8BF64008B1034 /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		89049116230B13F8001EC343 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		89075EB4231598A20066EB12 /* ConcluirCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcluirCadastroViewController.swift; sourceTree = "<group>"; };
 		8907A29122FDDB5B00BA4701 /* AmizadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmizadeViewController.swift; sourceTree = "<group>"; };
 		8908E50F2302055D00C6C9CB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8908E5102302055D00C6C9CB /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				836E2B5722E9FA3C002CC0B6 /* ViewController.swift */,
 				836E2B5222E9E8C3002CC0B6 /* CadastroViewController.swift */,
+				89075EB4231598A20066EB12 /* ConcluirCadastroViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				896F735B22FCAE2900BF8096 /* AmizadeRequestFactory.swift in Sources */,
 				890AF00F23047653001A2E8A /* NotificacaoViewController.swift in Sources */,
 				836557C922E89A1600EFE306 /* User.swift in Sources */,
+				89075EB5231598A20066EB12 /* ConcluirCadastroViewController.swift in Sources */,
 				836E2B5522E9F11D002CC0B6 /* ScreenManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

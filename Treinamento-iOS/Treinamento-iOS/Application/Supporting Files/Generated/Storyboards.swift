@@ -72,6 +72,8 @@ internal enum StoryboardScene {
 
     internal static let cadastroViewController = SceneType<Treinamento_iOS.CadastroViewController>(storyboard: Main.self, identifier: "CadastroViewController")
 
+    internal static let concluirCadastroViewController = SceneType<Treinamento_iOS.ConcluirCadastroViewController>(storyboard: Main.self, identifier: "ConcluirCadastroViewController")
+
     internal static let viewController = SceneType<Treinamento_iOS.ViewController>(storyboard: Main.self, identifier: "ViewController")
   }
   internal enum Perfil: StoryboardType {

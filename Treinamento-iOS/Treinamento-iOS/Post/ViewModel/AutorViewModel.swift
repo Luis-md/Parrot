@@ -15,7 +15,13 @@ struct AutorView {
     var username = ""
     var token = ""
     var id = 0
+    var perfilPic = ""
     var amigos: [AutorView] = []
+    
+    var urlImg: URL? {
+        
+        return URL(string: baseUrl + self.perfilPic)
+    }
 }
 
 
@@ -48,6 +54,7 @@ class AutorViewModel{
         autorView.token = autor.token ?? ""
         autorView.id = autor.id.value ?? 0
         autorView.amigos = AutorViewModel.getAsView(autors: autor.amigos)
+        autorView.perfilPic = autor.foto ?? ""
 
         
         return autorView

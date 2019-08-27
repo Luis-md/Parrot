@@ -38,5 +38,5 @@ class AutenticacaoRequestFactory {
         //retornando os parametros do newUser para serem enviados atraves do metodo post
         return Alamofire.request("\(baseUrl)/usuario/login", method: .post, parameters: loginUser, encoding: JSONEncoding.default)
     }
-
+    
 }

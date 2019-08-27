@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import Kingfisher
 
 class PostViewController: UIViewController {
 
@@ -23,6 +24,11 @@ class PostViewController: UIViewController {
     
     var postagemService: PostService!
     var posts: [PostView] = []
+    
+    /*var urlImg: URL? {
+        
+        return URL(string: baseUrl + )
+    }*/
 
     
     override func viewDidLoad() {
@@ -40,6 +46,7 @@ class PostViewController: UIViewController {
         self.imagePicker.delegate = self
         
         self.postagemService.getPosts()
+        //self.perfilPic.kf.setImage(with: self.SessionControl.user?.foto)
     }
     @IBAction func imagePick(_ sender: Any) {
         
