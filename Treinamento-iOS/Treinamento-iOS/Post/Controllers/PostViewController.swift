@@ -219,15 +219,4 @@ extension PostViewController : UINavigationControllerDelegate, UIImagePickerCont
         self.dismiss(animated: true, completion: nil)
     }
 }
-        
-/*        self.dismiss(animated: true, completion: nil)
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageImported?.image = image
-            
-        } else {
-            print("aabbn")
-        }
-        
-    }
-}*/
+

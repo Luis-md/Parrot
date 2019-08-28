@@ -13,6 +13,7 @@ protocol SearchTableViewDelegate {
 
 import UIKit
 import Reusable
+import Kingfisher
 
 class SearchTableViewCell: UITableViewCell, NibReusable {
     
@@ -32,11 +33,17 @@ class SearchTableViewCell: UITableViewCell, NibReusable {
         
     }
     
+    
     func bind(autor: AutorView){
         self.autor = autor
         self.email.text = autor.email
         self.userPerfil.setTitle("@\(autor.username)", for: .normal)
         
+        /*if let imgPerfil = autor.urlImg {
+            self.profilePic.kf.setImage(with: imgPerfil)
+        } else {
+            profilePic.image = Asset.parrotLogotipo.image
+        }*/
         self.userPerfil.layer.cornerRadius = 10
     }
     @IBAction func goPerfil(_ sender: Any) {

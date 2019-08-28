@@ -69,4 +69,29 @@ class PerfilService{
             ScreenManager.setupInitialViewController()
         }
     }
+    
+    func updtPerfilPic(mimeType: String, extensao: String, fileName: String, data: Data, name: String, password: String) {
+        
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            multipartFormData.append(data, withName: "foto", fileName: "image.jpg", mimeType: "image/jpg")
+            multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "nome")
+            multipartFormData.append(password.data(using: String.Encoding.utf8)!, withName: "password")
+            
+        }, usingThreshold: UInt64(), to: baseUrl + "/usuario", method: .put, headers: SessionControl.headers) { (result) in
+            
+            
+            switch result{
+            case .success(let upload, _, _):
+                
+                self.delegate.success(type: .getPerfil)
+                
+            case .failure(let error):
+                self.delegate.failure(error: error.localizedDescription)
+            }
+        }
+        
+    }
+
 }

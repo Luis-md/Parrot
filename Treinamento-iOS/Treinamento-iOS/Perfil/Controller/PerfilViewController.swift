@@ -38,13 +38,6 @@ class PerfilViewController: UIViewController {
         
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
         
-        if let id = self.perfilId, let userId = SessionControl.user?.id.value, userId != id {
-            self.button.setTitle("Adicionar", for: .normal)
-            self.perfilService.getPerfil(id: id)
-        } else {
-        
-            self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
-        }
         self.button.layer.cornerRadius = 5
         
        
@@ -54,6 +47,18 @@ class PerfilViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let id = self.perfilId, let userId = SessionControl.user?.id.value, userId != id {
+            self.button.setTitle("Adicionar", for: .normal)
+            self.perfilService.getPerfil(id: id)
+        } else {
+            
+            self.perfilService.getPerfil(id: SessionControl.user?.id.value ?? 0)
+        }
     }
 
     @IBAction func configBtn(_ sender: Any) {
@@ -65,8 +70,6 @@ class PerfilViewController: UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
-    
-
 }
 
 
@@ -79,11 +82,13 @@ extension PerfilViewController : perfilDelegate, AmizadeServiceDelegate, PostSer
         
         switch type {
         case .getPerfil:
-            if let id = perfilId, let userId = SessionControl.user?.id.value, userId != id {
-                self.perfil = PerfilViewModel.getPerfil(id: id)
-            } else {
-                self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
-            }
+            
+            self.perfil = PerfilViewModel.getPerfil(id: self.perfilId ?? (SessionControl.user?.id.value ?? 0))
+//            if let id = perfilId, let userId = SessionControl.user?.id.value, userId != id {
+//                self.perfil = PerfilViewModel.getPerfil(id: id)
+//            } else {
+//                self.perfil = PerfilViewModel.getPerfil(id: SessionControl.user?.id.value ?? 0)
+//            }
             self.usernameField.text = "@\(self.perfil?.autor.username ?? "")"
             self.perfilPic.kf.setImage(with: self.perfil?.autor.urlImg)
             let amigos = perfil?.autor.amigos.count

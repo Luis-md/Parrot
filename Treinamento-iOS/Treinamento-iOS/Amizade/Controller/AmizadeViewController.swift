@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AmizadeViewController: UIViewController {
     
@@ -43,6 +44,8 @@ extension AmizadeViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath) as SearchTableViewCell
         cell.delegate = self
         cell.bind(autor: self.autores[indexPath.row])
+        //cell.profilePic.kf.setImage(with: self.autores[indexPath.row].urlImg)
+        
         return cell
     }
     
