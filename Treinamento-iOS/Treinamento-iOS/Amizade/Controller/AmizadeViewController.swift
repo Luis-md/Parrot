@@ -85,7 +85,9 @@ extension AmizadeViewController : SearchTableViewDelegate{
     }
     
     func sendAmizade(id: Int) {
-        print("request made")
+        let alert = UIAlertController(title: "Solicitação enviada!", message: "Agora aguarde a confirmação do usuário 😊", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: nil))
+        self.present(alert, animated: true)
         self.amizadeService.sendFriend(id: id)
     }
     

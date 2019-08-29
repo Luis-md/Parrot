@@ -20,7 +20,7 @@ enum ResponseType {
     case updtPerfil
     case logoutPerfil
     case getSolicitacoes
-    case aceitarAmigo
+    case aceitarAmigo(amigoId: Int)
     
     case getPerfis
     case sendFriend

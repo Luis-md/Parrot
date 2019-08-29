@@ -29,12 +29,13 @@ class NotificacaoViewController: UIViewController {
 
 }
 
-extension NotificacaoViewController : AmizadeServiceDelegate{
+extension NotificacaoViewController : AmizadeServiceDelegate {
     func success(type: ResponseType) {
-            
-            self.autores = AutorViewModel.getAutors()
-            self.tableView.reloadData()
-        }
+        
+        
+        self.autores = AutorViewModel.getAutors()
+        self.tableView.reloadData()
+    }
     
     func failure(error: String) {
         

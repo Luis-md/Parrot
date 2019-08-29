@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     }
     
     
+    
 }
 
 extension ViewController: AutenticacaoServiceDelegate{
@@ -54,6 +55,10 @@ extension ViewController: AutenticacaoServiceDelegate{
     }
     
     func failure(error: String) {
+        SVProgressHUD.dismiss()
+        let alert = UIAlertController(title: "Erro no login", message: "Usuário e/ou senha inválidos", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
         print(error)
     }
     

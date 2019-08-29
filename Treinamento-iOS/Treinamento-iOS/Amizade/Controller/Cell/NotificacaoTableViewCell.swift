@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+import Kingfisher
 
 protocol NotificacaoTableViewDelegate {
     func accept(id: Int)
@@ -38,6 +39,7 @@ class NotificacaoTableViewCell: UITableViewCell, NibReusable {
        
         self.autor = autor
         self.username.text = autor.username
+        self.profilePic.kf.setImage(with: autor.urlImg)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

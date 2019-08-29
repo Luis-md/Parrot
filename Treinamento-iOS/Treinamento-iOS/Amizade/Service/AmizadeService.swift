@@ -94,7 +94,7 @@ class AmizadeService {
             case.success:
                 
                 AutorViewModel.delete(by: id)
-                self.delegate.success(type: .aceitarAmigo)
+                self.delegate.success(type: .aceitarAmigo(amigoId: id))
                 
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)

@@ -131,21 +131,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWD-4b-PI5">
-                                <rect key="frame" x="155.5" y="495" width="60" height="30"/>
-                                <state key="normal" title="Atualizar">
-                                    <color key="titleColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="updtInfo:" destination="bke-6H-mDf" eventType="touchUpInside" id="iKf-w1-2O2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYq-79-nb1">
-                                <rect key="frame" x="155.5" y="565" width="60" height="30"/>
+                                <rect key="frame" x="299" y="617" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="yvO-gu-izH"/>
-                                </constraints>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -164,24 +152,35 @@
                                     <action selector="profilePic:" destination="bke-6H-mDf" eventType="touchUpInside" id="KUm-F7-ace"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWD-4b-PI5">
+                                <rect key="frame" x="157.5" y="405" width="60" height="30"/>
+                                <state key="normal" title="Atualizar">
+                                    <color key="titleColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updtInfo:" destination="bke-6H-mDf" eventType="touchUpInside" id="iKf-w1-2O2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jT9-O2-iyB" firstAttribute="leading" secondItem="rdv-9a-dlc" secondAttribute="leading" id="0Zb-pH-I1Q"/>
-                            <constraint firstItem="3nK-A0-TiR" firstAttribute="trailing" secondItem="xWD-4b-PI5" secondAttribute="trailing" constant="159.5" id="7LT-XG-w0S"/>
+                            <constraint firstItem="vYq-79-nb1" firstAttribute="top" secondItem="xWD-4b-PI5" secondAttribute="bottom" constant="182" id="1dg-BC-JKl"/>
+                            <constraint firstItem="3nK-A0-TiR" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vYq-79-nb1" secondAttribute="bottom" constant="20" id="CgL-Uh-jrh"/>
                             <constraint firstItem="xbG-xI-mzb" firstAttribute="top" secondItem="mgj-aS-vcD" secondAttribute="top" constant="40" id="FMV-cj-xrA"/>
                             <constraint firstItem="SOM-GI-GSC" firstAttribute="top" secondItem="xbG-xI-mzb" secondAttribute="bottom" constant="20" id="LQx-B6-snh"/>
+                            <constraint firstItem="xWD-4b-PI5" firstAttribute="top" secondItem="jT9-O2-iyB" secondAttribute="bottom" constant="44" id="MMp-XW-hKs"/>
                             <constraint firstItem="jT9-O2-iyB" firstAttribute="trailing" secondItem="rdv-9a-dlc" secondAttribute="trailing" id="Mho-Qo-s3h"/>
                             <constraint firstItem="mgj-aS-vcD" firstAttribute="top" secondItem="3nK-A0-TiR" secondAttribute="top" constant="60" id="Mjj-l5-O5w"/>
-                            <constraint firstItem="3nK-A0-TiR" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vYq-79-nb1" secondAttribute="bottom" constant="16" id="Oj2-RN-Qk2"/>
+                            <constraint firstItem="vYq-79-nb1" firstAttribute="leading" secondItem="3nK-A0-TiR" secondAttribute="leading" constant="299" id="Pyb-cC-oeb"/>
                             <constraint firstItem="xbG-xI-mzb" firstAttribute="centerX" secondItem="3nK-A0-TiR" secondAttribute="centerX" id="ToI-WY-Z3f"/>
                             <constraint firstItem="SOM-GI-GSC" firstAttribute="centerX" secondItem="xbG-xI-mzb" secondAttribute="centerX" id="UnS-Me-foZ"/>
-                            <constraint firstItem="vYq-79-nb1" firstAttribute="top" secondItem="xWD-4b-PI5" secondAttribute="bottom" constant="40" id="W3c-dm-ey6"/>
-                            <constraint firstItem="xWD-4b-PI5" firstAttribute="leading" secondItem="3nK-A0-TiR" secondAttribute="leading" constant="155.5" id="XUw-mp-rpv"/>
                             <constraint firstItem="rdv-9a-dlc" firstAttribute="top" secondItem="SOM-GI-GSC" secondAttribute="bottom" constant="35" id="ZlU-BW-phJ"/>
+                            <constraint firstItem="xWD-4b-PI5" firstAttribute="leading" secondItem="3nK-A0-TiR" secondAttribute="leading" constant="157.5" id="bUD-EV-Cx3"/>
+                            <constraint firstItem="3nK-A0-TiR" firstAttribute="trailing" secondItem="vYq-79-nb1" secondAttribute="trailing" constant="16" id="dOS-lD-6Zt"/>
+                            <constraint firstItem="3nK-A0-TiR" firstAttribute="trailing" secondItem="xWD-4b-PI5" secondAttribute="trailing" constant="157.5" id="gs4-SG-GLF"/>
                             <constraint firstItem="3nK-A0-TiR" firstAttribute="trailing" secondItem="rdv-9a-dlc" secondAttribute="trailing" constant="36" id="hDY-af-iD9"/>
-                            <constraint firstItem="vYq-79-nb1" firstAttribute="centerX" secondItem="xWD-4b-PI5" secondAttribute="centerX" id="mr1-Y1-ijZ"/>
-                            <constraint firstItem="xWD-4b-PI5" firstAttribute="top" secondItem="jT9-O2-iyB" secondAttribute="bottom" constant="134" id="r87-5G-4m2"/>
+                            <constraint firstItem="xWD-4b-PI5" firstAttribute="centerX" secondItem="3nK-A0-TiR" secondAttribute="centerX" id="kIa-o7-oVU"/>
                             <constraint firstItem="rdv-9a-dlc" firstAttribute="leading" secondItem="mgj-aS-vcD" secondAttribute="leading" id="tGN-YS-D8s"/>
                             <constraint firstItem="jT9-O2-iyB" firstAttribute="top" secondItem="rdv-9a-dlc" secondAttribute="bottom" constant="16" id="ulA-kQ-MxQ"/>
                             <constraint firstItem="mgj-aS-vcD" firstAttribute="leading" secondItem="3nK-A0-TiR" secondAttribute="leading" constant="32" id="w2D-SG-5RW"/>

@@ -24,17 +24,15 @@ class PostViewController: UIViewController {
     
     var postagemService: PostService!
     var posts: [PostView] = []
+    var perfilService: PerfilService!
     
-    /*var urlImg: URL? {
-        
-        return URL(string: baseUrl + )
-    }*/
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.postagemService = PostService(delegate: self)
+        self.perfilService = PerfilService(delegate: self)
         
         self.groupView.layer.cornerRadius = 10
         self.perfilImage.layer.cornerRadius = self.perfilImage.frame.height / 2
@@ -84,7 +82,7 @@ class PostViewController: UIViewController {
 }
 
 
-extension PostViewController: PostServiceDelegate {
+extension PostViewController: PostServiceDelegate, perfilDelegate {
     func success(type: ResponseType) {
         
         switch type {
@@ -92,9 +90,7 @@ extension PostViewController: PostServiceDelegate {
             self.posts = PostViewModel.getPosts()
             if let index = self.posts.firstIndex(where: {$0.id == id}) {
                 self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
-            }
-            
-            
+        }
         default:
             self.posts = PostViewModel.getPosts()
             self.tableView.reloadData()

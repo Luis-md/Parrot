@@ -114,11 +114,11 @@ class AutenticacaoService {
                             
                             UsuarioViewModel.save(object: user)
                             SessionControl.setHeaders()
+                            self.delegate.success()
                         }
                     }
                 })
                 print("Cadastrou!!")
-                self.delegate.success()
             case .failure(let error):
                 self.delegate.failure(error: error.localizedDescription)
             }

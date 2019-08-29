@@ -42,7 +42,7 @@
                                     <action selector="addFriend:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cPU-jL-LRV"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ParrotLogin" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-Kb-2MG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ParrotLogin" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-Kb-2MG">
                                 <rect key="frame" x="13" y="18" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="HeR-AV-OSu"/>
@@ -50,8 +50,8 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOl-0A-4xS">
-                                <rect key="frame" x="112" y="8" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="112" y="8" width="53" height="30"/>
+                                <state key="normal" title="Usuario">
                                     <color key="titleColor" red="0.8862745098" green="0.32156862749999998" blue="0.32156862749999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -64,6 +64,7 @@
                             <constraint firstItem="0IN-lp-Fjf" firstAttribute="top" secondItem="zgo-dL-WWq" secondAttribute="bottom" constant="8" id="5ws-d1-rbJ"/>
                             <constraint firstItem="r6k-Kb-2MG" firstAttribute="leading" secondItem="lzt-zp-aaY" secondAttribute="leading" constant="13" id="CEC-1W-Cq4"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QOl-0A-4xS" secondAttribute="trailing" constant="8" id="HJF-dL-d0h"/>
+                            <constraint firstItem="r6k-Kb-2MG" firstAttribute="top" secondItem="lzt-zp-aaY" secondAttribute="top" constant="18" id="J3V-RO-n1p"/>
                             <constraint firstItem="QOl-0A-4xS" firstAttribute="top" secondItem="lzt-zp-aaY" secondAttribute="top" constant="8" id="PLX-7Q-gJq"/>
                             <constraint firstItem="QOl-0A-4xS" firstAttribute="leading" secondItem="r6k-Kb-2MG" secondAttribute="trailing" constant="19" id="RFR-7G-XAE"/>
                             <constraint firstItem="0IN-lp-Fjf" firstAttribute="leading" secondItem="zgo-dL-WWq" secondAttribute="leading" id="b5y-cX-CcI"/>
@@ -83,7 +84,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="button" destination="0IN-lp-Fjf" id="HYm-VN-Qfg"/>
                 <outlet property="email" destination="zgo-dL-WWq" id="KZd-Fj-6EN"/>
+                <outlet property="foto" destination="r6k-Kb-2MG" id="Yr8-wE-YuO"/>
                 <outlet property="userPerfil" destination="QOl-0A-4xS" id="ovU-We-0gf"/>
             </connections>
             <point key="canvasLocation" x="175.390625" y="115.72265624999999"/>

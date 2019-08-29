@@ -30,6 +30,6 @@ class AmizadeRequestFactory{
     
     static func amizadeAceita(id: Int) -> DataRequest {
         
-        return Alamofire.request("\(baseUrl)/solicitacoes/amizade\(id)", method: .post, headers: SessionControl.headers)
+        return Alamofire.request("\(baseUrl)/solicitacoes/amizade/\(id)", method: .post, headers: SessionControl.headers)
     }
 }

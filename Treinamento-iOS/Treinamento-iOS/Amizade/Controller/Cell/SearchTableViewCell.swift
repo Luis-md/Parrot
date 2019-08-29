@@ -6,21 +6,26 @@
 //  Copyright © 2019 Treinamento. All rights reserved.
 //
 
-protocol SearchTableViewDelegate {
-    func sendAmizade(id: Int)
-    func getPerfil(id: Int)
-}
+
 
 import UIKit
 import Reusable
 import Kingfisher
 
+protocol SearchTableViewDelegate {
+    func sendAmizade(id: Int)
+    func getPerfil(id: Int)
+}
+
 class SearchTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet weak var user: UILabel!
     @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var userPerfil: UIButton!
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var button: UIButton!
+    
+    
     
     var autor: AutorView!
     var delegate: SearchTableViewDelegate!
@@ -29,8 +34,6 @@ class SearchTableViewCell: UITableViewCell, NibReusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        
-        
     }
     
     
@@ -38,13 +41,10 @@ class SearchTableViewCell: UITableViewCell, NibReusable {
         self.autor = autor
         self.email.text = autor.email
         self.userPerfil.setTitle("@\(autor.username)", for: .normal)
-        
-        /*if let imgPerfil = autor.urlImg {
-            self.profilePic.kf.setImage(with: imgPerfil)
-        } else {
-            profilePic.image = Asset.parrotLogotipo.image
-        }*/
         self.userPerfil.layer.cornerRadius = 10
+        self.foto.kf.setImage(with: autor.urlImg)
+        self.foto.layer.cornerRadius = self.foto.frame.height/2
+        self.button.layer.cornerRadius = 5
     }
     @IBAction func goPerfil(_ sender: Any) {
         

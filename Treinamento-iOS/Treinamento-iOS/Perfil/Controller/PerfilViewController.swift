@@ -37,6 +37,7 @@ class PerfilViewController: UIViewController {
         self.postagemService = PostService(delegate: self)
         
         self.perfilPic.layer.cornerRadius = self.perfilPic.frame.height / 2
+        self.perfilPic.kf.setImage(with: self.perfil?.autor.urlImg)
         
         self.button.layer.cornerRadius = 5
         
