@@ -48,10 +48,12 @@ internal enum Asset {
   internal static let parrotLogin = ImageAsset(name: "ParrotLogin")
   internal static let parrotLogotipo = ImageAsset(name: "ParrotLogotipo")
   internal static let bell = ImageAsset(name: "bell")
+  internal static let bellNotify = ImageAsset(name: "bellNotify")
   internal static let edit = ImageAsset(name: "edit")
   internal static let houseOutline = ImageAsset(name: "house-outline")
   internal static let likeHeart = ImageAsset(name: "likeHeart")
   internal static let lupa = ImageAsset(name: "lupa")
+  internal static let olho = ImageAsset(name: "olho")
   internal static let perfil1 = ImageAsset(name: "perfil-1")
   internal static let perfil = ImageAsset(name: "perfil")
 
@@ -63,10 +65,12 @@ internal enum Asset {
     parrotLogin,
     parrotLogotipo,
     bell,
+    bellNotify,
     edit,
     houseOutline,
     likeHeart,
     lupa,
+    olho,
     perfil1,
     perfil,
   ]

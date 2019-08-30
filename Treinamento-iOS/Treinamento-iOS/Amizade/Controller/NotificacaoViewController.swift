@@ -67,6 +67,9 @@ extension NotificacaoViewController : UITableViewDataSource, UITableViewDelegate
 extension NotificacaoViewController : NotificacaoTableViewDelegate{
     func accept(id: Int) {
         
+        let alert = UIAlertController(title: "Solicitação aceita!", message: "Agora você tem um novo amigo 😊", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: nil))
+        self.present(alert, animated: true)
         self.amizadeService.aceitarAmigo(id: id)
     }
 }

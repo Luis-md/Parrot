@@ -15,6 +15,7 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
     
     var service: AutenticacaoService!
     override func viewDidLoad() {
@@ -32,40 +33,24 @@ class CadastroViewController: UIViewController {
             let userName = userName.text,
             let email = email.text,
             let password = password.text,
-            !fullName.isEmpty && !userName.isEmpty && !email.isEmpty && !password.isEmpty {
+            let confirmPass = confirmPassword.text,
+            !fullName.isEmpty && !userName.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPass.isEmpty {
             
-            controller.fullName = fullName
-            controller.userName = userName
-            controller.email = email
-            controller.password = password
+            if confirmPass != password {
+                let alert = UIAlertController(title: "Erro ❌", message: "Campos de password não estão iguais", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            } else {
             
-            self.navigationController?.pushViewController(controller, animated: true)
+                controller.fullName = fullName
+                controller.userName = userName
+                controller.email = email
+                controller.password = password
+                
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
-        
-        
-        /*if let fullname = fullName.text,
-           let username = userName.text,
-           let email = email.text,
-           let password = password.text,
-            !fullname.isEmpty && !username.isEmpty && !email.isEmpty && !password.isEmpty {
-            
-            self.service.cadastroUser(nome: fullname, username: username, email: email, password: password)
-        }
-    }*/
-}
-
-/*extension CadastroViewController: AutenticacaoServiceDelegate {
-    func success() {
-        
-        self.navigationController?.popViewController(animated: true)
-        
-        ScreenManager.setupInitialViewController()
     }
-    
-    func failure(error: String) {
-        
-        print(error)
-    }*/
-    
     
 }

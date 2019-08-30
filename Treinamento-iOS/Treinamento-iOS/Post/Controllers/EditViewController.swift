@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol EditViewControllerDelegate {
     func edit(id: Int)
@@ -31,7 +32,9 @@ class EditViewController: UIViewController {
         fullEditView.layer.cornerRadius = 10
         self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
         self.post = PostViewModel.get(by: id)
-    
+        
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+        self.profilePic.kf.setImage(with: self.post.autor.urlImg)
         editTextView.text = post.postMessage
     }
     

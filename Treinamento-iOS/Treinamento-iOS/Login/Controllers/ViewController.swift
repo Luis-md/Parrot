@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     
     var service: AutenticacaoService!
+    var passwordReveal = false
+    @IBOutlet weak var passwordColor: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,20 @@ class ViewController: UIViewController {
             !email.isEmpty && !password.isEmpty {
             self.service.loginUser(email: email, password: password)
             SVProgressHUD.show()        }
+    }
+    
+    @IBAction func revelarPassword(_ sender: Any) {
+        
+        
+        if passwordReveal == false {
+            passwordReveal = true
+            passwordColor.tintColor = .blue
+        } else {
+            passwordReveal = false
+            passwordColor.tintColor = .gray
+        }
+        
+        passwordText.isSecureTextEntry.toggle()
     }
  
     @IBAction func cadastrar(_ sender: Any) {
@@ -56,12 +72,19 @@ extension ViewController: AutenticacaoServiceDelegate{
     
     func failure(error: String) {
         SVProgressHUD.dismiss()
-        let alert = UIAlertController(title: "Erro no login", message: "Usuário e/ou senha inválidos", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
-        print(error)
+        
+        switch error {
+        case "Response status code was unacceptable: 401.":
+            let alert = UIAlertController(title: "Erro no login", message: "Usuário e/ou senha inválidos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        case "The Internet connection appears to be offline.":
+            let alert = UIAlertController(title: "Erro no login", message: "Verifique sua conexão", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        default:
+            print(error)
+        }
     }
-    
-    
 }
 

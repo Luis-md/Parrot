@@ -12,7 +12,9 @@ import RealmSwift
 
 struct UsuarioView {
     
+    var nome = ""
     var userName = ""
+    var email = ""
     var perfilPic = ""
     
     var urlImg: URL? {
@@ -32,6 +34,25 @@ class UsuarioViewModel {
             uiRealm.add(object, update: .all)
         }
     }
+    
+    static func getAsView(user: User?) -> UsuarioView {
+        guard let user = user else {
+            
+            return UsuarioView()
+        }
+        
+        
+        //setando os valores para a struct a partir da instanciacao de PostView
+        var userView = UsuarioView()
+        userView.nome = user.nome ?? ""
+        userView.userName = user.username ?? ""
+        userView.email = user.email ?? ""
+        userView.perfilPic = user.foto ?? ""
+        
+        
+        return userView
+    }
+    
     
     static func delete() {
         

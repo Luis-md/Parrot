@@ -25,14 +25,15 @@ class PostViewController: UIViewController {
     var postagemService: PostService!
     var posts: [PostView] = []
     var perfilService: PerfilService!
-    
-
+    var usuario: UsuarioView!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.postagemService = PostService(delegate: self)
         self.perfilService = PerfilService(delegate: self)
+        self.usuario = UsuarioViewModel.getAsView(user: SessionControl.user)
         
         self.groupView.layer.cornerRadius = 10
         self.perfilImage.layer.cornerRadius = self.perfilImage.frame.height / 2
@@ -43,9 +44,15 @@ class PostViewController: UIViewController {
         
         self.imagePicker.delegate = self
         
+        self.perfilImage.kf.setImage(with: usuario.urlImg)
         self.postagemService.getPosts()
-        //self.perfilPic.kf.setImage(with: self.SessionControl.user?.foto)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.perfilImage.kf.setImage(with: usuario.urlImg)
+    }
+    
     @IBAction func imagePick(_ sender: Any) {
         
         
