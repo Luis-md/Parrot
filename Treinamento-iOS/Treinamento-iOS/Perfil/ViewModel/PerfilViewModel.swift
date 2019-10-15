@@ -14,7 +14,7 @@ struct PerfilView {
     var posts: [PostView] = []
 }
 
-class PerfilViewModel{
+class PerfilViewModel {
     
     static func save(object: Perfil, clear: Bool = false){
         

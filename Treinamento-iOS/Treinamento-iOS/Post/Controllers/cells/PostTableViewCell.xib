@@ -35,7 +35,7 @@
                                 <color key="textColor" red="0.88627450980392153" green="0.32156862745098036" blue="0.32156862745098036" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-tX-he7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil" translatesAutoresizingMaskIntoConstraints="NO" id="rfg-tX-he7">
                                 <rect key="frame" x="0.0" y="100.5" width="474" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="aJg-MP-qxg"/>
@@ -93,9 +93,9 @@
                             <constraint firstItem="Yzb-bc-GSb" firstAttribute="leading" secondItem="wM8-Zu-ToB" secondAttribute="leading" id="ZKu-X6-wEJ"/>
                             <constraint firstItem="Yzb-bc-GSb" firstAttribute="top" secondItem="rfg-tX-he7" secondAttribute="bottom" constant="8" id="aWN-9X-3HS"/>
                             <constraint firstItem="YF2-tO-aY1" firstAttribute="leading" secondItem="wM8-Zu-ToB" secondAttribute="trailing" constant="16" id="eIX-kw-Kqb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yzb-bc-GSb" secondAttribute="bottom" constant="8" id="ePi-Yq-dqn"/>
                             <constraint firstItem="R98-rH-4xg" firstAttribute="leading" secondItem="zxq-Yb-5mu" secondAttribute="trailing" constant="24" id="emd-SB-S9L"/>
                             <constraint firstAttribute="trailing" secondItem="a6G-Sd-VkD" secondAttribute="trailing" constant="16" id="fUp-Cc-uwx"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rfg-tX-he7" secondAttribute="bottom" constant="16" id="hgo-Sy-Ydi"/>
                             <constraint firstItem="wM8-Zu-ToB" firstAttribute="top" secondItem="8j3-Et-KU6" secondAttribute="top" constant="16" id="hqf-1Z-A1c"/>
                             <constraint firstAttribute="trailing" secondItem="rfg-tX-he7" secondAttribute="trailing" id="jfC-gB-J6d"/>
                             <constraint firstItem="MNq-O5-rwx" firstAttribute="leading" secondItem="wM8-Zu-ToB" secondAttribute="leading" id="nph-Da-DfG"/>

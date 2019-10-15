@@ -11,7 +11,7 @@ import Foundation
 enum ResponseType {
     case post
     case getPost
-    case getPosts
+    case getPosts(isFinished: Bool)
     case sendLike(postId: Int)
     case delPost
     case editPost

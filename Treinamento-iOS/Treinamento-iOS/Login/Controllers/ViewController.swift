@@ -24,16 +24,15 @@ class ViewController: UIViewController {
         
         self.service = AutenticacaoService(delegate: self)
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+}
     @IBAction func login(_ sender: Any) {
         
         if let email = emailText.text,
            let password = passwordText.text,
             !email.isEmpty && !password.isEmpty {
             self.service.loginUser(email: email, password: password)
-            SVProgressHUD.show()        }
+            SVProgressHUD.show()
+        }
     }
     
     @IBAction func revelarPassword(_ sender: Any) {

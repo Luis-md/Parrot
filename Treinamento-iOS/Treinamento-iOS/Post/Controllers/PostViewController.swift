@@ -26,7 +26,13 @@ class PostViewController: UIViewController {
     var posts: [PostView] = []
     var perfilService: PerfilService!
     var usuario: UsuarioView!
- 
+    
+    var pagina: Int = 1
+    var isFinished = false
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +44,27 @@ class PostViewController: UIViewController {
         self.groupView.layer.cornerRadius = 10
         self.perfilImage.layer.cornerRadius = self.perfilImage.frame.height / 2
         
+        self.postTextView.delegate = self
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(cellType: PostTableViewCell.self)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 200
         
         self.imagePicker.delegate = self
         
         self.perfilImage.kf.setImage(with: usuario.urlImg)
-        self.postagemService.getPosts()
+        self.postagemService.getPosts(pagina: pagina)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         self.perfilImage.kf.setImage(with: usuario.urlImg)
     }
+    
+    
     
     @IBAction func imagePick(_ sender: Any) {
         
@@ -72,7 +85,6 @@ class PostViewController: UIViewController {
     }
     
     
-
     
     
     
@@ -83,6 +95,8 @@ class PostViewController: UIViewController {
             self.postagemService.sendAnexo(mimeType: imageDetail["mimeType"] ?? "", extensao: imageDetail["mimeTypeExtension"] ?? "", fileName: imageDetail["fileName"] ?? "", data: data, postMsg: postTextView.text)
         } else {
             postagemService.post(postMsg: postTextView.text)
+            postTextView.text = "O que você está sentindo?"
+            postTextView.endEditing(true)
         }
         
     }
@@ -97,7 +111,11 @@ extension PostViewController: PostServiceDelegate, perfilDelegate {
             self.posts = PostViewModel.getPosts()
             if let index = self.posts.firstIndex(where: {$0.id == id}) {
                 self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
-        }
+            }
+        case .getPosts(let isFinished):
+            self.isFinished = isFinished
+            self.posts = PostViewModel.getPosts()
+            self.tableView.reloadData()
         default:
             self.posts = PostViewModel.getPosts()
             self.tableView.reloadData()
@@ -128,6 +146,15 @@ extension PostViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 400
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let ultimoItem = posts.count - 1
+        if indexPath.row == ultimoItem && !self.isFinished {
+            self.pagina += 1
+            self.postagemService.getPosts(pagina: pagina)
+        }
     }
 }
 
@@ -223,3 +250,18 @@ extension PostViewController : UINavigationControllerDelegate, UIImagePickerCont
     }
 }
 
+extension PostViewController : UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        postTextView.text = " "
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if postTextView.text.isEmpty {
+            
+            postTextView.text = "O que você está sentindo?"
+        }
+    }
+}

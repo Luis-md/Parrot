@@ -442,7 +442,7 @@
 			buildConfigurationList = F66C789722D8BC4D001B5FDA /* Build configuration list for PBXNativeTarget "Treinamento-iOS" */;
 			buildPhases = (
 				D487A915581A49817D000189 /* [CP] Check Pods Manifest.lock */,
-				F66C78A222D8BFAA001B5FDA /* ShellScript */,
+				F66C78A222D8BFAA001B5FDA /* Run Script */,
 				F66C788122D8BC45001B5FDA /* Sources */,
 				F66C788222D8BC45001B5FDA /* Frameworks */,
 				F66C788322D8BC45001B5FDA /* Resources */,
@@ -551,7 +551,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Treinamento-iOS/Pods-Treinamento-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F66C78A222D8BFAA001B5FDA /* ShellScript */ = {
+		F66C78A222D8BFAA001B5FDA /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,6 +560,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (

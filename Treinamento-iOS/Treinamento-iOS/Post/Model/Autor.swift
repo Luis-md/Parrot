@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 
 
-class Autor: Object, Mappable {
+class sAutor: Object, Mappable {
     
     var id = RealmOptional<Int>()
     

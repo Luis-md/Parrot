@@ -27,6 +27,8 @@ class EditPerfilViewController: UIViewController {
     var imageDetail: [String : String] = [:]
     var data: Data?
     
+    var usuario: UsuarioView!
+    
     
     
     var delegate: EditPerfilDelegate!
@@ -36,14 +38,17 @@ class EditPerfilViewController: UIViewController {
         super.viewDidLoad()
         
         perfilService = PerfilService(delegate: self)
+        self.usuario = UsuarioViewModel.getAsView(user: SessionControl.user)
         self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
-        self.profilePic.kf.setImage(with: self.perfil?.autor.urlImg)
+        self.profilePic.kf.setImage(with: usuario.urlImg)
         self.password.placeholder = "Nova senha"
         self.name.placeholder = "Nome"
-
-
-       /* self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .done, target: self, action: #selector(method(for:)))*/
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//        self.profilePic.kf.setImage(with: self.usuario.urlImg)
+//    }
     
     @IBAction func updtInfo(_ sender: Any) {
         

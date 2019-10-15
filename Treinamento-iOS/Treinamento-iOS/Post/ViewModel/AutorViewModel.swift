@@ -90,7 +90,7 @@ class AutorViewModel{
         }
     }
     
-    static func getAsView(autors: [Autor]) -> [AutorView] {
+    static func getAsView(autors: List<Autor>) -> [AutorView] {
         
         var autorsView: [AutorView] = []
         autors.forEach { (autor) in
@@ -101,7 +101,7 @@ class AutorViewModel{
         return autorsView
     }
     
-    static func getAsView(autors: List<Autor>) -> [AutorView] {
+    static func getAsView(autors: [Autor]) -> [AutorView] {
         
         var autorsView: [AutorView] = []
         autors.forEach { (autor) in

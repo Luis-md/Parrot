@@ -42,18 +42,19 @@ class PostService {
         }
     }
     
-    func getPosts() {
-        PostRequestFactory.getPosts(pagina: 1).validate().responseArray { (response: DataResponse<[Post]>) in
+    func getPosts(pagina: Int) {
+        PostRequestFactory.getPosts(pagina: pagina).validate().responseArray { (response: DataResponse<[Post]>) in
             
             switch response.result {
                 
             case .success:
                 
                 if let posts = response.result.value {
-                    PostViewModel.saveAll(objects: posts, clear: true)
+                    PostViewModel.saveAll(objects: posts, clear: false)
+                    self.delegate.success(type: .getPosts(isFinished: posts.isEmpty))
+                } else {
+                    self.delegate.success(type: .getPosts(isFinished: false))
                 }
-                
-                self.delegate.success(type: .getPosts)
                 
             case .failure(let error):
                 
@@ -132,7 +133,7 @@ class PostService {
         }, usingThreshold: UInt64(), to: baseUrl + "/postagem", method: .post, headers: SessionControl.headers) { (result) in
             
             
-            switch result{
+            switch result {
             case .success(let upload, _, _):
                 print("SUCESSO CARAI")
 
